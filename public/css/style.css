@@ -1,0 +1,131 @@
+/* header */
+
+.rounded-circle {
+    width: 35px;
+    margin-right: 8px;
+}
+
+button {
+    background: unset;
+    border: none;
+    overflow: hidden;
+}
+
+
+/* ------------------------- */
+
+
+/* tela inicial */
+
+.tela-inicio {
+    background: no-repeat center/cover url('/img/img-telainicio.jpg');
+}
+
+.tela-inicio .row h1 {
+    text-shadow: 0px 0px 10px white;
+}
+
+.tela-inicio .row button {
+    padding: 8px 10px;
+    border-radius: 20px;
+    color: black;
+    background-color: white;
+    border: none;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.tela-inicio .row button:hover {
+    background: #dff119;
+    opacity: 0.4;
+    box-shadow: 0 0 10px #dff119, 0 0 40px #dff119, 0 0 80px #dff119;
+}
+
+
+/* ------------------------- */
+
+
+/* Anuncios */
+
+.anuncios {
+    background: no-repeat center/cover url('https://source.unsplash.com/random/542x321');
+}
+
+.anuncios .container {
+    margin-top: 15px;
+    width: 95%;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.title-container {
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container .jumbotron {
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+
+/* ------------------------- */
+
+
+/* Contatos / localização */
+
+.contatos-localizacao {
+    background: no-repeat center/cover url('https://source.unsplash.com/random/542x321');
+}
+
+.contatos-localizacao .container {
+    margin-top: 15px;
+    width: 95%;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.contatos-localizacao .container .midia-social ul {
+    margin: 0 auto;
+    padding: 0;
+    display: inline;
+}
+
+.contatos-localizacao .container .midia-social ul li {
+    margin: 0 10px;
+    display: inline;
+}
+
+.contatos-localizacao .container .midia-social ul li svg {
+    color: gold;
+    transition: 0.5s;
+    border-radius: 7px;
+}
+
+.contatos-localizacao .container .midia-social ul li svg:hover {
+    color: gold;
+    box-shadow: 0 0 10px #dff119;
+}
+
+
+/* ------------------------- */
+
+.col-md-6 img {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.row .col-md-6 img {
+    border-radius: 15px;
+}
+
+.row .col-md-6 p {
+    margin-top: 8px;
+    font-family: Roboto, sans-serif;
+}
