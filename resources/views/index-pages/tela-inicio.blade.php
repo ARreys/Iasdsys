@@ -18,16 +18,7 @@
                                             sed do eiusmod tempor incididunt
                                             ut labore et dolore magna aliqua.
                                             Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco
-                                            laboris nisi ut aliquip
-                                            ex ea commodo consequat. Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt
-                                            ut labore et dolore magna aliqua.
-                                            Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco
-                                            laboris nisi ut aliquip
-                                            ex ea commodo consequat.</h3>
+                                            quis nostrud exercitation ullamco</h3>
                                     </div>
                                 </div>
                                 <button type="button" class="btsubmeter-campanha" data-toggle="modal" data-target="#modalpresenca">Marcar Presença</button>
@@ -97,7 +88,7 @@
                     <div class="form-group">
                         <div class="form-check mt-3">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                            <label class="form-label">Eu li os termos de segurança para estar na igreja durante este período :)</label>
+                            <label class="form-label">Eu li e concordo com os termos de segurança para estar na igreja durante este período :)</label>
                             <div class="invalid-feedback">Você deve ler os termos de segurança para estar na igreja durante este período :( </div>
                         </div>
                     </div>
