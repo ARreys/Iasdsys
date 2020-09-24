@@ -27,9 +27,6 @@
                 <li class="nav-item" id="contato-localizacao">
                     <a class="nav-link" href="/contato-localizacao">Contatos e Localização</a>
                 </li>
-                <li class="nav-item" id="contato-localizacao">
-                    <a class="nav-link" href="{{route('logout')}}">Logout</a>
-                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
