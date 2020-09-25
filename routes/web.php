@@ -16,6 +16,12 @@ Route::get('/contato-localizacao', function() {
 })->name("contato");
 /* ---------------------------------------- */
 
+/* Rota get contato */
+Route::get('/painel', function() {
+    return view('organizacao/painel');
+})->name("painel");
+/* ---------------------------------------- */
+
 /* Rota post do formulário para organização */
 Route::post('/envioform', 'Controller\SegurancaController@login')->name('organizacao');
 /* ---------------------------------------- */

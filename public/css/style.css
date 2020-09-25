@@ -42,6 +42,10 @@ button {
     box-shadow: 0 0 10px #dff119, 0 0 40px #dff119, 0 0 80px #dff119;
 }
 
+.tela-inicio .container-fluid {
+    min-height: 85%;
+}
+
 
 /* ------------------------- */
 

@@ -5,7 +5,7 @@
     <body class="tela-inicio" id="inicio">
         @component('componentes.header')
         @endcomponent
-                <div class="container-fluid text-white" style="min-height: 650px">
+                <div class="container-fluid text-white">
                     <div class="item-fluid">
                         <div class="container">
                             <div class="row">
@@ -86,7 +86,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                         <label class="form-label" for="invalidCheck">Eu li e concordo com os termos de segurança para estar na igreja durante este período :)</label>
-                        <div class="invalid-feedback">Você deve ler os termos de segurança para estar na igreja durante este período :( </div>
+                        <div class="invalid-feedback">Você deve ler e concordar com os termos de segurança para estar na igreja durante este período :( </div>
                     </div>
                 </div>
             </div>
@@ -95,37 +95,6 @@
                 <button type="submit" class="btn btn-primary">Confirmar Presença</button>
             </div>
         </form>
-        <script>
-        // Exemplo de JavaScript inicial para desativar envios de formulário, se houver campos inválidos.
-            (function() {
-                'use strict';
-                 window.addEventListener('load', function() {
-                    // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
-                    var forms = document.getElementsByClassName('needs-validation');
-                    // Faz um loop neles e evita o envio
-                    var validation = Array.prototype.filter.call(forms, function(form) {
-                        form.addEventListener('submit', function(event) {
-                            if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
-        </script>
-        <script>
-            function habilitar(){
-                    if(document.getElementById('acompanhante').checked){
-                        document.getElementById('qtdacompanhante').removeAttribute("disabled");
-                    }
-                    else {
-                        document.getElementById('acompanhante').value=''; //Evita que o usuário defina um texto e desabilite o campo após realiza-lo
-                        document.getElementById('qtdacompanhante').setAttribute("disabled", "disabled");
-                    }
-                }
-        </script>
         @endcomponent
 
         @component('componentes.scripts')
