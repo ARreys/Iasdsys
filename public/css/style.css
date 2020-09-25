@@ -43,7 +43,12 @@ button {
 }
 
 .tela-inicio .container-fluid {
-    min-height: 85%;
+    min-height: 100%;
+}
+
+.pedir-estudo {
+    background-color: #f5f6fa;
+    min-height: 400px;
 }
 
 

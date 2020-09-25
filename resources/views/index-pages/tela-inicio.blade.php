@@ -27,6 +27,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="container-fluid text-white pedir-estudo">
+                    <div class="item-fluid">
+
+                    </div>
+                </div>
+
         <footer class="page-footer">
             <div class="footer-copyright text-center text-white py-3">
                 Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>
