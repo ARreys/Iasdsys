@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <footer class="page-footer font-small blue pt-4">
+        <footer class="page-footeranuncios font-small blue pt-4">
             <div class="footer-copyright text-center text-white py-3">
                 Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo dia - Central - Parnaíba</a>
             </div>

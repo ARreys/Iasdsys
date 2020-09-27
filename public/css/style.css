@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    border: 0;
+}
+
+
 /* header */
 
 .rounded-circle {
@@ -23,7 +33,6 @@ button {
 
 .tela-inicio .row h1 {
     text-shadow: 0px 0px 10px white;
-    /* font-size: 8rem; */
 }
 
 .tela-inicio .row button {
@@ -34,6 +43,7 @@ button {
     border: none;
     overflow: hidden;
     transition: 0.5s;
+    box-shadow: 0 0 10px #dff119;
 }
 
 .tela-inicio .row button:hover {
@@ -83,6 +93,10 @@ button {
     margin-bottom: 1rem;
 }
 
+.page-footeranuncios {
+    background: unset;
+}
+
 
 /* ------------------------- */
 
@@ -91,10 +105,14 @@ button {
 
 .contatos-localizacao {
     background: no-repeat center/cover url('https://source.unsplash.com/random/542x321');
+    padding-top: 15px;
+}
+
+.content {
+    min-height: 84%;
 }
 
 .contatos-localizacao .container {
-    margin-top: 15px;
     width: 95%;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.5)
@@ -122,6 +140,10 @@ button {
     box-shadow: 0 0 10px #dff119;
 }
 
+.page-footercontato-localizacao {
+    background: unset;
+}
+
 
 /* ------------------------- */
 
@@ -139,3 +161,89 @@ button {
     margin-top: 8px;
     font-family: Roboto, sans-serif;
 }
+
+.page-footer {
+    background: #343a40;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 767px) {
+    p {
+        font-size: 1.8rem;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    /* Contatos / localização */
+    .contatos-localizacao {
+        min-height: 100%;
+    }
+    .content {
+        min-height: 90%;
+    }
+    /* ------------------------- */
+    .tela-inicio .row p {
+        font-size: 1.6rem;
+    }
+    .tela-inicio .row button {
+        margin-top: 30px;
+        padding: 8px 10px;
+        border-radius: 20px;
+        color: black;
+        background-color: white;
+        border: none;
+        overflow: hidden;
+        transition: 0.5s;
+        box-shadow: 0 0 10px #dff119;
+    }
+    .page-footer {
+        font-size: 0.8rem;
+        background: #343a40;
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 1.6rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    /* Contatos / localização */
+    .contatos-localizacao {
+        min-height: 100%;
+    }
+    .content {
+        height: auto
+    }
+    /* ------------------------- */
+    .tela-inicio .row p {
+        margin-top: 15px;
+    }
+    .tela-inicio .row button {
+        margin-top: 20px;
+        padding: 8px 10px;
+        border-radius: 20px;
+        color: black;
+        background-color: white;
+        border: none;
+        overflow: hidden;
+        transition: 0.5s;
+        box-shadow: 0 0 10px #dff119;
+    }
+    .page-footer {
+        font-size: 0.5rem;
+        background: #343a40;
+    }
+    .page-footercontato-localizacao {
+        font-size: 0.6rem;
+    }
+    .page-footeranuncios {
+        font-size: 0.6rem;
+    }
+}
+
+
+/* ------------------------- */

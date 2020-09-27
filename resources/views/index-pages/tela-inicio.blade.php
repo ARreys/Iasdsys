@@ -2,10 +2,11 @@
 @component('componentes.head')
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 @endcomponent
-    <body class="tela-inicio" id="inicio">
         @component('componentes.header')
         @endcomponent
-                <div class="container-fluid text-white">
+    <body id="inicio">
+            <div class="tela-inicio">
+                <div class="tela-inicio container-fluid text-white">
                     <div class="item-fluid">
                         <div class="container">
                             <div class="row">
@@ -13,12 +14,12 @@
                                     <h1> Qualquer Título</h1>
                                     <div class="my-4 mx-5">
                                         <div class="text-center text-black my-5">
-                                            <h3>Lorem ipsum dolor sit amet,
+                                            <p>Lorem ipsum dolor sit amet,
                                             consectetur adipiscing elit,
                                             sed do eiusmod tempor incididunt
                                             ut labore et dolore magna aliqua.
                                             Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco</h3>
+                                            quis nostrud exercitation ullamco</p>
                                         </div>
                                     </div>
                                     <button type="button" class="btmarcar-presenca" data-toggle="modal" data-target="#modalpresenca">Marcar Presença</button>
@@ -27,11 +28,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid text-white pedir-estudo">
-                    <div class="item-fluid">
-
+            </div>
+            <div class="container-fluid text-center pedir-estudo">
+                <div class="container">
+                    <div class="row" style="margin-bottom: 15px">
+                        <div class="col-md-12">
+                            <h1>Projetos</h1>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 30px">
+                        <div class="col-md-6 img-legenda-container mt-2 mb-2">
+                            <div class="caption-imagem">
+                                <img src="https://source.unsplash.com/random/420x254" class="img-fluid"/>
+                                <div class="texto-caption">
+                                    <h2>Nome Projeto</h2>
+                                    <a href="">Saiba mais</a>
+                                </div>
+                            </div>
+                            <div class="legenda-imagem">
+                                <h4>Legenda</h4>
+                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 img-legenda-container mt-2 mb-2">
+                            <div class="caption-imagem">
+                                <img src="https://source.unsplash.com/random/420x254" class="img-fluid"/>
+                                <div class="texto-caption">
+                                    <h2>Nome Projeto</h2>
+                                    <a href="">Saiba mais</a>
+                                </div>
+                            </div>
+                            <div class="legenda-imagem">
+                                <h4>Legenda</h4>
+                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <a href="" class="btn btn-azul">Ver Todos +</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
         <footer class="page-footer">
             <div class="footer-copyright text-center text-white py-3">

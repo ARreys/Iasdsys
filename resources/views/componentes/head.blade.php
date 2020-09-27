@@ -16,4 +16,6 @@
     {{-- conteudo dinamico de cabeçalho  --}}
     {{$slot}}
     <script src="{{asset('js/main.js')}}"></script>
+    <!-- Parallax -->
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 </head>

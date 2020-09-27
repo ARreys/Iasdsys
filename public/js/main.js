@@ -38,3 +38,9 @@ for (const element of document.getElementsByTagName('li')) {
     }
 }
 //!Header
+
+//(Para o parallax) - Carrega as fotos primeiro
+setTimeout(function() {
+    $('#inicio-parallax').parallax({ imageSrc: 'img/img-telainicio.jpg' });
+}, 200);
+//!Parallax
