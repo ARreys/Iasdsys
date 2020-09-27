@@ -25,11 +25,12 @@
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <!-- <div class="dropdown-divider"></div> -->
                         <!-- linha divisória caso seja preciso colocar mais intes no dropdown menu -->
-                        <a class="dropdown-item" href="login.html">Sair</a>
+                        <a class="dropdown-item" href="{{route('inicio')}}">Voltar pro inicio</a>
+                        <a class="dropdown-item" href="{{route('logout')}}">Sair</a>
                     </div>
                 </li>
             </ul>
@@ -40,7 +41,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Análise</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Painel de Controle
                             </a>
@@ -52,8 +53,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Adicionar Anúncio</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Remover Anúncio</a>
+                                    <a class="nav-link" href="">Adicionar Anúncio</a>
+                                    <a class="nav-link" href="">Remover Anúncio</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -63,7 +64,7 @@
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                         Visitantes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -137,134 +138,8 @@
                                 <i class="fas fa-table mr-1"></i>
                                 Visitantes
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <td>Bruno Nash</td>
-                                                <td>Software Engineer</td>
-                                                <td>London</td>
-                                                <td>38</td>
-                                                <td>2011/05/03</td>
-                                                <td>$163,500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sakura Yamamoto</td>
-                                                <td>Support Engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>37</td>
-                                                <td>2009/08/19</td>
-                                                <td>$139,575</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Thor Walton</td>
-                                                <td>Developer</td>
-                                                <td>New York</td>
-                                                <td>61</td>
-                                                <td>2013/08/11</td>
-                                                <td>$98,540</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Finn Camacho</td>
-                                                <td>Support Engineer</td>
-                                                <td>San Francisco</td>
-                                                <td>47</td>
-                                                <td>2009/07/07</td>
-                                                <td>$87,500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serge Baldwin</td>
-                                                <td>Data Coordinator</td>
-                                                <td>Singapore</td>
-                                                <td>64</td>
-                                                <td>2012/04/09</td>
-                                                <td>$138,575</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Zenaida Frank</td>
-                                                <td>Software Engineer</td>
-                                                <td>New York</td>
-                                                <td>63</td>
-                                                <td>2010/01/04</td>
-                                                <td>$125,250</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Zorita Serrano</td>
-                                                <td>Software Engineer</td>
-                                                <td>San Francisco</td>
-                                                <td>56</td>
-                                                <td>2012/06/01</td>
-                                                <td>$115,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jennifer Acosta</td>
-                                                <td>Junior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>43</td>
-                                                <td>2013/02/01</td>
-                                                <td>$75,650</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cara Stevens</td>
-                                                <td>Sales Assistant</td>
-                                                <td>New York</td>
-                                                <td>46</td>
-                                                <td>2011/12/06</td>
-                                                <td>$145,600</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Hermione Butler</td>
-                                                <td>Regional Director</td>
-                                                <td>London</td>
-                                                <td>47</td>
-                                                <td>2011/03/21</td>
-                                                <td>$356,250</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lael Greer</td>
-                                                <td>Systems Administrator</td>
-                                                <td>London</td>
-                                                <td>21</td>
-                                                <td>2009/02/27</td>
-                                                <td>$103,500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jonas Alexander</td>
-                                                <td>Developer</td>
-                                                <td>San Francisco</td>
-                                                <td>30</td>
-                                                <td>2010/07/14</td>
-                                                <td>$86,500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Shad Decker</td>
-                                                <td>Regional Director</td>
-                                                <td>Edinburgh</td>
-                                                <td>51</td>
-                                                <td>2008/11/13</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Michael Bruce</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>29</td>
-                                                <td>2011/06/27</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Donna Snider</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>27</td>
-                                                <td>2011/01/25</td>
-                                                <td>$112,000</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            @component('componentes.tabela')
+                            @endcomponent
                         </div>
                     </div>
                 </main>

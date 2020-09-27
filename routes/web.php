@@ -7,23 +7,23 @@ Route::get('/', function () {
 /* ---------------------------------------- */
 
 /* Rota get anuncios */
-Route::get('/anuncios', "Controller\OrganizacaoController@anuncioView")->name("anuncio");
+Route::get('/anuncios', function() {
+    return view('anuncios');
+})->name("anuncios");
 /* ---------------------------------------- */
 
 /* Rota get contato */
 Route::get('/contato-localizacao', function() {
     return view('contato-localizacao');
-})->name("contato");
-/* ---------------------------------------- */
-
-/* Rota get contato */
-Route::get('/painel', function() {
-    return view('organizacao/painel');
-})->name("painel");
+})->name("contato_localizacao");
 /* ---------------------------------------- */
 
 /* Rota post do formulário para organização */
 Route::post('/envioform', 'Controller\SegurancaController@login')->name('organizacao');
+/* ---------------------------------------- */
+
+/* Rota get painel */
+Route::get('/painel', "Controller\OrganizacaoController@painelView")->name("painel");
 /* ---------------------------------------- */
 
 /* Rota post do formulário para organização */
@@ -38,4 +38,3 @@ Route::get("/logout", function(){
     return redirect()->route("inicio");
 })->name("logout");
 /* ---------------------------------------- */
-

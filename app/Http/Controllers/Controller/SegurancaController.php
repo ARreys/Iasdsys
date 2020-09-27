@@ -16,7 +16,7 @@ class SegurancaController extends Controller
     public function login (Request $request){
         if($request->id === "5" && $request->senha === "senha"){
             session(["login" => true]);
-            return redirect()->route("anuncio");
+            return redirect()->route("painel");
         }else{
             session(["login" => false]);
             return redirect()->route("usernaoencontrado");

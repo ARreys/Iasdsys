@@ -6,7 +6,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
         <!-- Navbar brand -->
-        <img class="rounded-circle" src="{{asset('./img/logo.jpg')}}" alt="logo da igreja"></div>
+        <img class="rounded-circle" src="{{asset('./img/logo.jpg')}}" alt="logo_header"></div>
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,13 +22,10 @@
                     <a class="nav-link" href="/">Início</a>
                 </li>
                 <li class="nav-item" id="anuncios">
-                    <a class="nav-link" href="{{route('anuncio')}}">Anúncios</a>
+                    <a class="nav-link" href="{{route('anuncios')}}">Anúncios</a>
                 </li>
                 <li class="nav-item" id="contato-localizacao">
-                    <a class="nav-link" href="/contato-localizacao">Contatos e Localização</a>
-                </li>
-                <li class="nav-item" id="contato-localizacao">
-                    <a class="nav-link" href="{{route('painel')}}">painel</a>
+                    <a class="nav-link" href="{{route('contato_localizacao')}}">Contatos e Localização</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -54,7 +51,7 @@
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Mantenha-me conectadoo</label>
+                    <label class="form-check-label" for="exampleCheck1">Mantenha-me conectado</label>
                 </div>
             </div>
             <div class="modal-footer">

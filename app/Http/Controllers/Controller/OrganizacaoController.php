@@ -12,8 +12,8 @@ class OrganizacaoController extends Controller
             ['except' => [
             ]]);
     }
-    public function anuncioView()
+    public function painelView()
     {
-        return view("anuncios");
+        return view("organizacao/painel");
     }
 }
