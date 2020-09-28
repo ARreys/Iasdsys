@@ -4,71 +4,75 @@
 @endcomponent
         @component('componentes.header')
         @endcomponent
-    <body id="inicio">
-            <div class="tela-inicio">
-                <div class="tela-inicio container-fluid text-white">
-                    <div class="item-fluid">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-12 text-center text-black my-5">
-                                    <h1> Qualquer Título</h1>
-                                    <div class="my-4 mx-5">
-                                        <div class="text-center text-black my-5">
-                                            <p>Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt
-                                            ut labore et dolore magna aliqua.
-                                            Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco</p>
-                                        </div>
+    <body>
+            <div class="tela-inicio container-fluid text-white" style="background: no-repeat center/cover url('{{ asset('img/img-telainicio.jpg')}}');">
+                <div class="item-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center text-black my-5">
+                                <h1>Igreja Adventista do Sétimo Dia</h1>
+                                <div class="my-4 mx-5">
+                                    <div class="text-center text-black my-5">
+                                        <p>Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam,
+                                        quis nostrud exercitation ullamco</p>
                                     </div>
-                                    <button type="button" class="btmarcar-presenca" data-toggle="modal" data-target="#modalpresenca">Marcar Presença</button>
                                 </div>
+                                <button type="button" class="btmarcar-presenca" data-toggle="modal" data-target="#modalpresenca">Marcar Presença</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid text-center pedir-estudo">
+            <div class="container-fluid text-center text-white mais-informacoes">
                 <div class="container">
-                    <div class="row" style="margin-bottom: 15px">
-                        <div class="col-md-12">
-                            <h1>Projetos</h1>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-bottom: 30px">
-                        <div class="col-md-6 img-legenda-container mt-2 mb-2">
-                            <div class="caption-imagem">
-                                <img src="https://source.unsplash.com/random/420x254" class="img-fluid"/>
-                                <div class="texto-caption">
-                                    <h2>Nome Projeto</h2>
-                                    <a href="">Saiba mais</a>
+                    <div class="row mb-15">
+                        <div class="col-md-12 mt-15 card-info">
+                            <div class="col-md-12">
+                                <h1>Mais Informações</h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 img-legenda-container mt-2 mb-2">
+                                    <div class="caption-imagem">
+                                        <img src="{{asset('img/novotempo.jpg')}}" class="img-fluid"/>
+                                        <div class="texto-caption">
+                                            <h2>Canal Novo Tempo</h2>
+                                            <a onclick="window.open('https://ntplay.com/aovivo')">
+                                                <button type="button" class="ntplay">Assistir ao vivo !</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="legenda-imagem" style="margin-top: 15px;">
+                                        <h4>Legenda</h4>
+                                        <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 img-legenda-container mt-2 mb-2">
+                                    <div class="caption-imagem">
+                                        <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/>
+                                        <div class="texto-caption">
+                                            <h2>Peça seu estudo bíblico</h2>
+                                            <a onclick="window.open('https://biblia.com.br')">
+                                                <button type="button" class="crsbiblico">Pedir agora !</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="legenda-imagem" style="margin-top: 15px;">
+                                        <h4>Legenda</h4>
+                                        <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="legenda-imagem">
-                                <h4>Legenda</h4>
-                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 img-legenda-container mt-2 mb-2">
-                            <div class="caption-imagem">
-                                <img src="https://source.unsplash.com/random/420x254" class="img-fluid"/>
-                                <div class="texto-caption">
-                                    <h2>Nome Projeto</h2>
-                                    <a href="">Saiba mais</a>
-                                </div>
-                            </div>
-                            <div class="legenda-imagem">
-                                <h4>Legenda</h4>
-                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
-                            </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12 d-flex justify-content-center">
                             <a href="" class="btn btn-azul">Ver Todos +</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -143,6 +147,7 @@
         @endcomponent
 
         @component('componentes.scripts')
+
         @endcomponent
     </body>
 </html>

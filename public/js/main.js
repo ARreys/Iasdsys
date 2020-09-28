@@ -41,6 +41,6 @@ for (const element of document.getElementsByTagName('li')) {
 
 //(Para o parallax) - Carrega as fotos primeiro
 setTimeout(function() {
-    $('#inicio-parallax').parallax({ imageSrc: 'img/img-telainicio.jpg' });
+    $('#inicio-parallax').parallax({ imageSrc: "{{asset('img/img-telainicio.jpg')}}" });
 }, 200);
 //!Parallax

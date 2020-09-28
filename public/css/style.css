@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -28,17 +29,19 @@ button {
 /* tela inicial */
 
 .tela-inicio {
-    background: no-repeat center/cover url('/img/img-telainicio.jpg');
+    height: 600px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.tela-inicio .row h1 {
+.row h1 {
     text-shadow: 0px 0px 10px white;
 }
 
-.tela-inicio .row button {
+.btmarcar-presenca {
     padding: 8px 10px;
     border-radius: 20px;
     color: black;
+    font-weight: bold;
     background-color: white;
     border: none;
     overflow: hidden;
@@ -46,19 +49,73 @@ button {
     box-shadow: 0 0 10px #dff119;
 }
 
-.tela-inicio .row button:hover {
+.btmarcar-presenca:hover {
     background: #dff119;
     opacity: 0.4;
     box-shadow: 0 0 10px #dff119, 0 0 40px #dff119, 0 0 80px #dff119;
 }
 
-.tela-inicio .container-fluid {
+.mais-informacoes {
+    font-family: 'Montserrat', sans-serif;
+    background: #343a40;
     min-height: 100%;
 }
 
-.pedir-estudo {
-    background-color: #f5f6fa;
-    min-height: 400px;
+.card-info {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.texto-caption {
+    margin-top: 10px;
+}
+
+.texto-caption a {
+    margin-top: 10px;
+}
+
+
+/* card novo tempo */
+
+.ntplay {
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: #193df1;
+    border: none;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: 0 0 10px #dff119;
+}
+
+.ntplay:hover {
+    color: black;
+    background: #dff119;
+    opacity: 0.8;
+    box-shadow: 0 0 10px #193df1, 0 0 20px #193df1, 0 0 30px #193df1;
+}
+
+.crsbiblico {
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: #193df1;
+    border: none;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: 0 0 10px #dff119;
+}
+
+.crsbiblico:hover {
+    color: black;
+    background: #dff119;
+    opacity: 0.8;
+    box-shadow: 0 0 10px #193df1, 0 0 20px #193df1, 0 0 30px #193df1;
 }
 
 
@@ -170,11 +227,17 @@ button {
 /* Responsividade */
 
 @media (max-width: 767px) {
-    p {
-        font-size: 1.8rem;
-    }
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.9rem;
+    }
+    h4 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.6rem;
     }
     /* Contatos / localização */
     .contatos-localizacao {
@@ -187,11 +250,12 @@ button {
     .tela-inicio .row p {
         font-size: 1.6rem;
     }
-    .tela-inicio .row button {
+    .btmarcar-presenca {
         margin-top: 30px;
         padding: 8px 10px;
         border-radius: 20px;
         color: black;
+        font-weight: bold;
         background-color: white;
         border: none;
         overflow: hidden;
@@ -199,17 +263,33 @@ button {
         box-shadow: 0 0 10px #dff119;
     }
     .page-footer {
-        font-size: 0.8rem;
         background: #343a40;
+        font-size: 1.2rem;
+    }
+    .page-footercontato-localizacao {
+        font-size: 1.2rem;
+    }
+    .page-footeranuncios {
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    p {
-        font-size: 1.6rem;
-    }
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    /* Inicio */
+    .tela-inicio {
+        min-height: 100%;
     }
     /* Contatos / localização */
     .contatos-localizacao {
@@ -221,12 +301,14 @@ button {
     /* ------------------------- */
     .tela-inicio .row p {
         margin-top: 15px;
+        font-size: 1.2rem;
     }
-    .tela-inicio .row button {
+    .btmarcar-presenca {
         margin-top: 20px;
         padding: 8px 10px;
         border-radius: 20px;
         color: black;
+        font-weight: bold;
         background-color: white;
         border: none;
         overflow: hidden;
@@ -234,14 +316,13 @@ button {
         box-shadow: 0 0 10px #dff119;
     }
     .page-footer {
-        font-size: 0.5rem;
-        background: #343a40;
+        font-size: 0.8rem;
     }
     .page-footercontato-localizacao {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
     .page-footeranuncios {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
 }
 
