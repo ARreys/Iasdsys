@@ -27,7 +27,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <div class="container-fluid text-center text-white sobreaigreja"style="background: no-repeat center/cover url('{{ asset('img/sobre.jpg')}}'); padding; 15px;">
                         <div class="container2 container">
                             <div class="row mb-15">
@@ -128,20 +127,20 @@
                                         <div class="texto-caption">
                                             <h2>Peça seu estudo bíblico</h2>
                                             <a onclick="window.open('https://biblia.com.br')">
-                                            <button type="button" class="crsbiblico">Pedir agora !</button>
-                                        </a>
+                                                <button type="button" class="crsbiblico">Pedir agora !</button>
+                                            </a>
+                                        </div>
                                         <div class="legenda-imagem" style="margin-top: 15px;">
                                             <h4>Legenda</h4>
                                             <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 img-legenda-container mt-2 mb-2">
-                                    <div class="caption-imagem">
-                                        <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
+                                    <div class="col-md-6 img-legenda-container mt-2 mb-2">
+                                        <div class="caption-imagem">
+                                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -154,7 +153,7 @@
                     <!-- Copyright -->
 
                     @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation text-black" novalidate>
                         <div class="form-column">
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">

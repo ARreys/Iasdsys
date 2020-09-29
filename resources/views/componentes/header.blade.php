@@ -30,7 +30,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#loginorganizacao">Organização</button>
+                    <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#loginorganizacao">Administração</button>
                 </li>
             </ul>
             <!-- Links -->
@@ -39,7 +39,7 @@
     </nav>
     @component('componentes.modal', ['id' => 'loginorganizacao', 'titulo' => 'Login Organização'])
         <form action="{{route('organizacao')}}" method="Post">
-                <div class="modal-body">
+            <div class="modal-body">
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">ID</label>
