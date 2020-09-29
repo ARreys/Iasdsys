@@ -53,7 +53,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#adicionaranuncio">Adicionar Anúncio</button>
+                                <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#adicionaranuncio">Adicionar Anúncio</button>
                                     <a class="nav-link" href="{{route('removeranuncio')}}">Remover Anúncio</a>
                                 </nav>
                             </div>
@@ -92,7 +92,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Painel de Controle</h1>
+                        <h1 class="mt-4">Visitantes</h1>
                         <!-- <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
@@ -138,7 +138,6 @@
                             </div>
                             @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
                             <button type="button" class="btn btn-danger">Remover</button>
-                            <button type="button" class="btn btn-primary">Alterar</button>
                             @endcomponent
                         </div>
                     </div>
@@ -147,11 +146,6 @@
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Igreja Adventista do Sétimo Dia - Central - Parnaíba</div>
-                            <!-- <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div> -->
                         </div>
                     </div>
                 </footer>
@@ -162,7 +156,7 @@
         <script src="{{asset('js/painel.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         @component('componentes.modal', ['id' => 'adicionaranuncio', 'titulo' => 'Adicionar Anúncio'])
-            <form class="needs-validation text-black" novalidate>
+        <form class="needs-validation text-black" novalidate>
                 <div class="form-column">
                     <div class="form-row">
                         <div class="col-md-12 mb-3">

@@ -24,9 +24,11 @@ Route::post('/envioform', 'Controller\SegurancaController@login')->name('organiz
 
 /* Rota get painel */
 Route::get('/painel', "Controller\OrganizacaoController@painelView")->name("painel");
+Route::get('/removeranuncio', "Controller\OrganizacaoController@removeranuncioView")->name("removeranuncio");
+Route::get('/visitantes', "Controller\OrganizacaoController@visitantesView")->name("visitantes");
 /* ---------------------------------------- */
 
-/* Rota post do formulário para organização */
+/* Rota post do formulário para administração */
 Route::get('/envioform', function() {
     return view('inicio');
 })->name("usernaoencontrado");

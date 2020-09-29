@@ -16,4 +16,16 @@ class OrganizacaoController extends Controller
     {
         return view("organizacao/painel");
     }
+    public function adicionaranuncioView()
+    {
+        return view("organizacao/adicionaranuncio");
+    }
+    public function removeranuncioView()
+    {
+        return view("organizacao/removeranuncio");
+    }
+    public function visitantesView()
+    {
+        return view("organizacao/visitantes");
+    }
 }
