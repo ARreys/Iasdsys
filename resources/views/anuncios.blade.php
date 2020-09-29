@@ -7,28 +7,10 @@
         @endcomponent
         <div class="container text-black">
             <h3 style="color: white">Anúncios</h3>
-            <div class="jumbotron">
-                <h2>Anuncio 1</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="https://via.placeholder.com/1280x720/3da2d1/FFFFFF?text=16:9" alt="imagem" class="img-thumbnail">
-                    </div>
-                    <div class="col-md-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eleifend augue eget felis accumsan, id egestas augue laoreet. Etiam bibendum lectus enim, eget facilisis sapien laoreet eget. Praesent vel urna congue, tincidunt justo sit amet, fermentum urna. Phasellus vel arcu ut leo aliquet ullamcorper sed ut neque. Quisque efficitur metus id sapien blandit, id varius tellus interdum. Pellentesque ante elit, placerat vel urna non, dictum sollicitudin purus. Nullam sit amet feugiat eros, at porta sapien. Fusce pretium erat ut metus tincidunt, ac cursus lectus feugiat.
-                    </div>
-                </div>
-            </div>
-            <div class="jumbotron">
-                <h2>Anuncio 2</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="https://via.placeholder.com/1280x720/3da2d1/FFFFFF?text=16:9" alt="imagem" class="img-thumbnail">
-                    </div>
-                    <div class="col-md-6">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eleifend augue eget felis accumsan, id egestas augue laoreet. Etiam bibendum lectus enim, eget facilisis sapien laoreet eget. Praesent vel urna congue, tincidunt justo sit amet, fermentum urna. Phasellus vel arcu ut leo aliquet ullamcorper sed ut neque. Quisque efficitur metus id sapien blandit, id varius tellus interdum. Pellentesque ante elit, placerat vel urna non, dictum sollicitudin purus. Nullam sit amet feugiat eros, at porta sapien. Fusce pretium erat ut metus tincidunt, ac cursus lectus feugiat.</p>
-                    </div>
-                </div>
-            </div>
+            @component('componentes.anuncio', ['titulo' => 'Anúncio 1', 'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu ex ea commodo consequat.'])
+            @endcomponent
+            @component('componentes.anuncio', ['titulo' => 'Anúncio 2', 'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu ex ea commodo consequat.'])
+            @endcomponent
         </div>
 
         <footer class="page-footeranuncios font-small blue pt-4">

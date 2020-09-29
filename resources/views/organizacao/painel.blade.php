@@ -138,7 +138,7 @@
                                 <i class="fas fa-table mr-1"></i>
                                 Visitantes
                             </div>
-                            @component('componentes.tabela')
+                            @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao']))
                             @endcomponent
                         </div>
                     </div>

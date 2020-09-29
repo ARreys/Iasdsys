@@ -31,16 +31,16 @@ function habilitar() {
 
 
 //Header
-let id = $('body').attr('id');
-for (const element of document.getElementsByTagName('li')) {
-    if (element.id == id) {
-        element.classList.add('active');
-    }
-}
+// let id = $('body').attr('id');
+// for (const element of document.getElementsByTagName('li')) {
+//     if (element.id == id) {
+//         element.classList.add('active');
+//     }
+// }
 //!Header
 
 //(Para o parallax) - Carrega as fotos primeiro
-setTimeout(function() {
-    $('#inicio-parallax').parallax({ imageSrc: "{{asset('img/img-telainicio.jpg')}}" });
-}, 200);
+// setTimeout(function() {
+//     $('#inicio-parallax').parallax({ imageSrc: "{{asset('img/img-telainicio.jpg')}}" });
+// }, 200);
 //!Parallax
