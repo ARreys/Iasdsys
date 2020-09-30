@@ -2,24 +2,23 @@
     @component('componentes.head')
     @endcomponent
 
-    <body class="anuncios" id="anuncios">
-        @component('componentes.header')
+<body class="anuncios" id="anuncios">
+    @component('componentes.header')
+    @endcomponent
+    <div class="container text-black">
+        <h3 style="color: white">Anúncios</h3>
+        @component('componentes.anuncio', ['titulo' => 'Anúncio 1', 'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu ex ea commodo consequat.'])
         @endcomponent
-        <div class="container text-black">
-            <h3 style="color: white">Anúncios</h3>
-            @component('componentes.anuncio', ['titulo' => 'Anúncio 1', 'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu ex ea commodo consequat.'])
-            @endcomponent
-            @component('componentes.anuncio', ['titulo' => 'Anúncio 2', 'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu ex ea commodo consequat.'])
-            @endcomponent
+        @component('componentes.anuncio', ['titulo' => 'Anúncio 2', 'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu ex ea commodo consequat.'])
+        @endcomponent
+    </div>
+    <footer class="page-footeranuncios font-small blue pt-4">
+        <div class="footer-copyright text-center text-white py-3">
+            Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo dia - Central - Parnaíba</a>
         </div>
-
-        <footer class="page-footeranuncios font-small blue pt-4">
-            <div class="footer-copyright text-center text-white py-3">
-                Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo dia - Central - Parnaíba</a>
-            </div>
-        </footer>
-        <!-- Copyright -->
-        @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
+    </footer>
+    <!-- Copyright -->
+    @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
         <form action="" method="Post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
@@ -34,15 +33,13 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Mantenha-me conectado</label>
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 <button type="button" type="submit" class="btn btn-primary">Entrar</button>
             </div>
         </form>
-        @endcomponent
-
-        @component('componentes.scripts')
-        @endcomponent
-    </body>
+    @endcomponent
+    @component('componentes.scripts')
+    @endcomponent
+</body>
 </html>
