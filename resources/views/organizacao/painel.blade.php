@@ -30,7 +30,7 @@
                         <!-- <div class="dropdown-divider"></div> -->
                         <!-- linha divisória caso seja preciso colocar mais intes no dropdown menu -->
                         <a class="dropdown-item" href="{{route('inicio')}}">Voltar pro inicio</a>
-                        <a class="dropdown-item" href="{{route('logout')}}">Sair</a>
+                        <a class="dropdown-item" href="{{route('user.logout')}}">Sair</a>
                     </div>
                 </li>
             </ul>
