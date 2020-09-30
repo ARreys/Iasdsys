@@ -274,17 +274,30 @@ button {
 
 .contatos-localizacao .container .midia-social ul li svg {
     color: gold;
-    transition: 0.5s;
     border-radius: 7px;
-}
-
-.contatos-localizacao .container .midia-social ul li svg:hover {
-    color: gold;
-    box-shadow: 0 0 10px #dff119;
 }
 
 .page-footercontato-localizacao {
     background: unset;
+}
+
+
+/* ------------------------- */
+
+
+/* Painel */
+
+.botaoadicionaradmin {
+    float: right;
+}
+
+.botaoremovertodos {
+    float: right;
+}
+
+.botaofecharmarcacao {
+    margin-left: 8px;
+    float: right;
 }
 
 

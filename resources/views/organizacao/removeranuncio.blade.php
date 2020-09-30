@@ -67,20 +67,24 @@
                                     <a class="nav-link" href="{{route('visitantes')}}">
                                         Visitantes
                                     </a>
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    <a class="nav-link collapsed" href="{{route('presencas')}}">
                                         Marcaram Presença
                                     </a>
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Administração</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="{{route('admins')}}">
+                                <div class="sb-nav-link-icon"><i data-feather="search"></i></div>
+                                Administradores
+                            </a>
+                            <!-- <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i data-feather="plus"></i></div>
                                 Adicionar Organizador
                             </a>
                             <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i data-feather="delete"></i></div>
                                 Excluir Organizador
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                     <!-- <div class="sb-sidenav-footer">
@@ -134,7 +138,8 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                Visitantes
+                                Tabela Anúncios
+                                <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
                             </div>
                             @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
                             <button type="button" class="btn btn-danger">Remover</button>
@@ -176,7 +181,7 @@
                         </div>
                     <div class="form-row">
                         <div class="col-md-12">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Fazer upload de imagem</button>
+                            <button type="button" class="btn btn-success mb-3" data-dismiss="modal">Fazer upload de imagem</button>
                         </div>
                     </div>
                 </div>
