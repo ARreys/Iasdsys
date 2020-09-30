@@ -222,7 +222,6 @@
                     @endcomponent
 
                     @component('componentes.scripts')
-
                     @endcomponent
     </body>
 </html>

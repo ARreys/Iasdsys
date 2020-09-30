@@ -11,6 +11,7 @@
                     <td>{{$contato}}</td>
                     <td>{{$quantidadeacompanhante}}</td>
                     <td>{{$visitante}}</td>
+                    <td>{{ $slot }}</td>
                 </tr>
             </tbody>
         </table>
