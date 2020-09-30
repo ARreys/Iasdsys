@@ -40,16 +40,10 @@ Route::post('/envioform', 'Controller\SegurancaController@login')->name('organiz
 /* ---------------------------------------- */
 
 /* Rota get painel */
-<<<<<<< HEAD
+
 Route::get('/painel', function(){
     return view('organizacao.painel');
 })->name("painel");
-=======
-Route::get('/painel', "Controller\OrganizacaoController@painelView")->name("painel");
-Route::get('/removeranuncio', "Controller\OrganizacaoController@removeranuncioView")->name("removeranuncio");
-Route::get('/visitantes', "Controller\OrganizacaoController@visitantesView")->name("visitantes");
->>>>>>> 772ef3cf597b9f587e96f80d3156d3a2666111da
-/* ---------------------------------------- */
 
 /* Rota post do formulário para administração */
 Route::get('/envioform', function() {

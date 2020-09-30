@@ -7,15 +7,15 @@
 </style>
 @if($tipo == 'erro')
 <div class="alert alert-danger" role="alert" id="erro">
-    {{ $slot }}
+    {{ $slot }} <i class="far fa-times-circle"></i>
 </div>
 @elseif($tipo == 'info')
 <div class="alert alert-primary" role="alert" id="info">
-    {{ $slot }}
+    {{ $slot }} <i class="far fa-times-circle"></i>
 </div>
 @elseif($tipo == 'alert')
 <div class="alert alert-warning" role="alert" id="alert">
-    {{ $slot }}
+    {{ $slot }} <i class="far fa-times-circle"></i>
 </div>
 @endif
 <script>

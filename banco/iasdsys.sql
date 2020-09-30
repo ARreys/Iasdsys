@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Set-2020 às 16:05
+-- Tempo de geração: 30-Set-2020 às 16:37
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.3.22
 
@@ -55,7 +55,10 @@ CREATE TABLE `local` (
   `alterado` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `capacidade` int(11) DEFAULT NULL,
-  `em_uso` tinyint(4) DEFAULT NULL
+  `em_uso` tinyint(4) DEFAULT NULL,
+  `nome` varchar(50) DEFAULT NULL,
+  `rua` varchar(50) DEFAULT NULL,
+  `bairro` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Um local pode conter varios eventos agendados\nUm local possui varias presenças de pessoas';
 
 -- --------------------------------------------------------
@@ -70,7 +73,8 @@ CREATE TABLE `pessoa` (
   `alterado` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `nome` varchar(45) DEFAULT NULL,
-  `telefone` varchar(45) DEFAULT NULL
+  `telefone` varchar(45) DEFAULT NULL,
+  `visitante` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -101,7 +105,7 @@ CREATE TABLE `usuario` (
   `alterado` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `nome` varchar(45) DEFAULT NULL,
-  `user_name` varchar(45) DEFAULT NULL,
+  `telefone` varchar(45) DEFAULT NULL,
   `senha` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Um usuario cadastrar muito eventos';
 
