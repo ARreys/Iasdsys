@@ -5,6 +5,12 @@
         @component('componentes.header')
         @endcomponent
     <body>
+
+        @if(session()->has('msg'))
+            @component('componentes.alertas', ['tipo' => session('msg.tipo')])
+                {{ session('msg.texto') }}
+            @endcomponent
+        @endif
                         <div class="tela-inicio container-fluid text-white" style="background: no-repeat center/cover url('{{ asset('img/img-telainicio.jpg')}}');">
                             <div class="container1 item-fluid">
                                 <div class="container">
@@ -153,12 +159,12 @@
                     <!-- Copyright -->
 
                     @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
-                    <form class="needs-validation text-black" novalidate>
+                    <form class="needs-validation text-black" novalidate method="POST" action="{{ route('pessoa.create.presenca') }}">
                         <div class="form-column">
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
                                     <label for="validationCustom01">Nome Completo</label>
-                                    <input type="text" class="form-control" id="nome-completo" placeholder="Insira o seu nome completo" required>
+                                    <input type="text" class="form-control" id="nome-completo" placeholder="Insira o seu nome completo" name="nome" required>
                                     <div class="valid-feedback">Tudo certo!</div>
                                     <div class="invalid-feedback">Ops, seu nome.</div>
                                 </div>
@@ -166,14 +172,14 @@
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom02">Idade</label>
-                                    <input type="text" class="form-control" id="idade" placeholder="Insira sua idade" required>
+                                    <input type="text" class="form-control" id="idade" placeholder="Insira sua idade" name="idade" required>
                                     <div class="valid-feedback">Tudo certo!</div>
                                     <div class="invalid-feedback">Ops, sua idade.</div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="mb-3">
                                         <label for="validationCustom03">Contato</label>
-                                        <input type="text" class="form-control" id="contato" placeholder="(com DDD)*" required>
+                                        <input type="text" class="form-control" id="contato" placeholder="(com DDD)*" name="telefone" required>
                                         <div class="valid-feedback">Tudo certo!</div>
                                         <div class="invalid-feedback">Ops, seu contato.</div>
                                     </div>
@@ -181,13 +187,13 @@
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
-                                    <input type="text" class="form-control" id="qtdacompanhante" placeholder="Quantidade" aria-describedby="inputGroupPrepend" disabled required>
+                                    <input type="text" class="form-control" id="qtdacompanhante" placeholder="Quantidade" name="quantidade" aria-describedby="inputGroupPrepend" disabled required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="acompanhante" onchange="habilitar()" required>
+                                        <input class="form-check-input" type="checkbox" value="" id="acompanhante" onchange="habilitar()"  required>
                                         <label class="form-label">Eu irei levar acompanhantes !</label>
                                     </div>
                                 </div>
@@ -195,7 +201,7 @@
                             <div class="form-row">
                                 <div class="col-md-12 mt-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="visitante" required>
+                                        <input class="form-check-input" type="checkbox" value="" id="visitante" name="visita" required>
                                         <label class="form-label">Sou visitante</label>
                                     </div>
                                 </div>
