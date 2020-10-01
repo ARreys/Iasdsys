@@ -17,7 +17,7 @@
                     <div class="col-sm-12 text-center text-black my-5">
                         <h1 class="titulo">IASD Central de Parnaíba</h1>
                         <div class="my-4 mx-5">
-                            <div class="text-center text-black my-5">
+                            <div class="text-center text-black">
                                 <p>Lorem ipsum dolor sit amet,
                                     consectetur adipiscing elit,
                                     sed do eiusmod tempor incididunt
@@ -27,6 +27,14 @@
                             </div>
                         </div>
                         <button type="button" class="btmarcar-presenca" data-toggle="modal" data-target="#modalpresenca">Marcar Presença</button>
+                    </div>
+                </div>
+                <div class="culto-ao-vivo row">
+                    <div class="col-sm-12 text-center text-black my-5">
+                        <h2 class="titulo">Assistir culto ao vivo </h2>
+                        <a onclick="window.open('https://www.youtube.com/c/iasdcentralparnaiba')" class="social-media">
+                            <button type="button" class="btplayculto"><i data-feather="youtube"></i></button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -58,23 +66,23 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid text-center text-white mais-informacoes" style="padding: 20px">
-        <div class="row mb-15">
+    <div class="container-fluid text-center text-white mais-informacoes">
+        <div class="row">
             <div class="col-md-12 mt-15 card-info">
-                <div class="col-md-12">
+                <div class="col-md-12 card-info-titulo">
                     <h1>Quero Estudar !</h1>
-                    <div style="background-color: white; width: 100%; height: 3px;"></div>
+                    <div style="background-color: rgb(20, 69, 155); width: 100%; height: 3px;"></div>
                 </div>
                 <div class="row linha1">
                     <div class="col-md-6 img-legenda-container mt-2 mb-2">
                         <div class="caption-imagem">
-                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
+                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/>
                         </div>
                     </div>
                     <div class="col-md-6 mt-3">
                         <div class="texto-caption">
                             <h2>Peça seu estudo bíblico</h2>
-                            <a onclick="window.open('https://biblia.com.br')">
+                            <a onclick="window.open('https://cursos.novotempo.com/')">
                                 <button type="button" class="crsbiblico">Pedir agora !</button>
                             </a>
                             <div class="legenda-imagem" style="margin-top: 15px;">
@@ -106,7 +114,7 @@
                 <div class="row linha3">
                     <div class="col-md-6 img-legenda-container mt-2 mb-2">
                         <div class="caption-imagem">
-                            <img src="{{asset('img/radionovotempo.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
+                            <img src="{{asset('img/radionovotempo.jpg')}}" class="img-fluid"/>
                         </div>
                     </div>
                     <div class="col-md-6 mt-3">
@@ -122,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row linha4">
+                <!-- <div class="row linha4">
                     <div class="col-md-6 mt-3">
                         <div class="texto-caption">
                             <h2>Peça seu estudo bíblico</h2>
@@ -137,10 +145,10 @@
                     </div>
                     <div class="col-md-6 img-legenda-container mt-2 mb-2">
                         <div class="caption-imagem">
-                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
+                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
