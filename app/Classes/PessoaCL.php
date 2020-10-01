@@ -103,7 +103,7 @@ class PessoaCL
         if ($month_diff < 0 || ($month == date('m') && $day > date('d')) ){
             $year_diff--;
         }
-        return ($year_diff >= 18)?true:false;
+        return ($year_diff >= 13)?true:false;
     }
 
     public function create(){

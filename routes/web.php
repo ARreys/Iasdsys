@@ -68,7 +68,7 @@ Route::get('/start-system',function(){
         "rua" => 'rua nome',
         'bairro' => 'bairro nome',
         'em_uso' => 1,
-        'capacidade' => 40
+        'capacidade' => 7
     ]);
     return 'Sistema startado';
 });
