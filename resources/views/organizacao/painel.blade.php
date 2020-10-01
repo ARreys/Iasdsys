@@ -41,7 +41,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Análise</div>
-                            <a class="nav-link" href="{{route('painel')}}">
+                            <a class="nav-link" href="{{route('user.view.painel')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Painel de Controle
                             </a>
@@ -54,7 +54,8 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#adicionaranuncio">Adicionar Anúncio</button>
-                                    <a class="nav-link" href="{{route('removeranuncio')}}">Remover Anúncio</a>
+                                    {{--  remover anuncios  --}}
+                                    <a class="nav-link" href="">Remover Anúncio</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -64,7 +65,8 @@
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="{{route('visitantes')}}">
+                                    {{--  visitantes  --}}
+                                    <a class="nav-link" href="">
                                         Visitantes
                                     </a>
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">

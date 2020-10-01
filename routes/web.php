@@ -24,7 +24,9 @@ Route::prefix("/common")->group(function(){
 });
 /* ----------------------------------------Usuario------------------------------------------------ */
 Route::prefix("/user-admin")->group(function(){
-    /** Login */
+    /** Painel administração */
+    Route::get('/painel', 'Controller\UsuarioC@viewPainel')->name('user.view.painel');
+    /** Login e logout */
     Route::post('/login', 'Controller\UsuarioC@login')->name('user.login');
     Route::get('/logout', 'Controller\UsuarioC@logout')->name('user.logout');
 });
@@ -40,10 +42,6 @@ Route::post('/envioform', 'Controller\SegurancaController@login')->name('organiz
 /* ---------------------------------------- */
 
 /* Rota get painel */
-
-Route::get('/painel', function(){
-    return view('organizacao.painel');
-})->name("painel");
 
 /* Rota post do formulário para administração */
 Route::get('/envioform', function() {

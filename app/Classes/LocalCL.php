@@ -1,6 +1,8 @@
 <?php
 namespace App\Classes;
 
+use App\Model\Local;
+
 class LocalCL
 {
     private $id;
@@ -82,5 +84,9 @@ class LocalCL
 
 	public function setDeletedAt($deletedAt){
 		$this->deletedAt = $deletedAt;
-	}
+    }
+
+    public function localDisponivel(){
+        return Local::where('em_uso',1)->first();
+    }
 }

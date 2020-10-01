@@ -43,14 +43,26 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">ID</label>
-                    <input type="text" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu ID">
+                    @if(App\Classes\Cookie::has('id'))
+                        <input type="text" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu ID" value="{{ App\Classes\Cookie::get('id') }}">
+                    @else
+                        <input type="text" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu ID">
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="inputFone">Senha</label>
-                    <input type="text" class="form-control" name="senha" id="inputFone" placeholder="Insira sua senha">
+                        @if(App\Classes\Cookie::has('senha'))
+                            <input type="password" class="form-control" name="senha" id="inputFone" placeholder="Insira sua senha" value="{{ App\Classes\Cookie::get('senha') }}">
+                        @else
+                            <input type="password" class="form-control" name="senha" id="inputFone" placeholder="Insira sua senha">
+                        @endif
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    @if(App\Classes\Cookie::has('conectado'))
+                        <input type="checkbox" checked name="conectado" value="1" class="form-check-input" id="exampleCheck1">
+                    @else
+                        <input type="checkbox" name="conectado" value="1" class="form-check-input" id="exampleCheck1">
+                    @endif
                     <label class="form-check-label" for="exampleCheck1">Mantenha-me conectado</label>
                 </div>
             </div>

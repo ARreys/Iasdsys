@@ -3,6 +3,7 @@
         position: fixed !important;
         right: 10px;
         bottom: 20px;
+        max-width: 410px;
     }
 </style>
 @if($tipo == 'erro')

@@ -1,9 +1,15 @@
 <?php
+namespace App\Classes;
+
+use App\Model\Local;
+use App\Model\Presenca;
+
 class PresencaCL
 {
     private $id;
     private $pessoa;
     private $local;
+    private $diaPresenca;
     private $quantidadeMarcada;
     private $criado;
     private $alterado;
@@ -72,6 +78,66 @@ class PresencaCL
      */
     public function setQuantidadeMarcada($quantidadeMarcada)
     {
-        $this->quantidadeMarcada = $quantidadeMarcada;
+        if(!is_null($quantidadeMarcada)){
+            $this->quantidadeMarcada = $quantidadeMarcada;
+        }else{
+            $this->quantidadeMarcada = 0;
+        }
     }
+    /**
+     * Get the value of diaPresenca
+     */
+    public function getDiaPresenca()
+    {
+        return $this->diaPresenca;
+    }
+
+    /**
+     * Set the value of diaPresenca
+     *
+     * @return  self
+     */
+    public function setDiaPresenca($diaPresenca)
+    {
+        $this->diaPresenca = $diaPresenca;
+
+        return $this;
+    }
+    public function proximaData($dia = 'Saturday'){
+         return date('Y-m-d',(strtotime("next $dia")));
+    }
+
+    public function verficarLotacao($data, $local)
+    {
+        //quantidade de pessoas querendo se agendar com ou sem acompanhantes
+        $quantidade_adicionar = 1 + $this->getQuantidadeMarcada();
+        $quantidade_agendada = Presenca::where('dia_presenca',$data)->count();
+        //falta pegar quantidade marcada usar svg(soma de coluna)
+        $quantidade_acompanhante = Presenca::where('dia_presenca',$data)->sum('quantidade_marcada');
+        $quantidade_agendada += $quantidade_acompanhante + $quantidade_adicionar;
+        $quantidade_local = $local->capacidade;
+        if($quantidade_agendada > $quantidade_local){//local ira lotar
+            session(['msg' => [
+                'tipo' => 'erro',
+                'texto' => "Agendamento negado! \n
+                            Quantidade local: {$quantidade_local}! \n\t
+                            Lotação calculada: ".($quantidade_agendada - $quantidade_local). " pessoa(s) a mais"
+            ]]);
+            return false;
+        }else{//local ainda ficara vago ou lotado
+            return true;
+        }
+    }
+
+    public function agendarPresenca($pessoa,$local,$data)
+    {
+        Presenca::create([
+            "pessoa_id" => $pessoa->id,
+            "local_id" => $local->id,
+            "quantidade_marcada" => $this->getQuantidadeMarcada(),
+            "dia_presenca" => $data
+        ]);
+    }
+
+
 }

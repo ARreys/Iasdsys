@@ -160,6 +160,7 @@
 
                     @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
                     <form class="needs-validation text-black" novalidate method="POST" action="{{ route('pessoa.create.presenca') }}">
+                        @csrf
                         <div class="form-column">
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
@@ -171,8 +172,8 @@
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="validationCustom02">Idade</label>
-                                    <input type="text" class="form-control" id="idade" placeholder="Insira sua idade" name="idade" required>
+                                    <label for="validationCustom02">Data nascimento</label>
+                                    <input type="date" class="form-control" id="idade" placeholder="Insira sua idade" name="data_nasc" required>
                                     <div class="valid-feedback">Tudo certo!</div>
                                     <div class="invalid-feedback">Ops, sua idade.</div>
                                 </div>
@@ -187,13 +188,13 @@
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
-                                    <input type="text" class="form-control" id="qtdacompanhante" placeholder="Quantidade" name="quantidade" aria-describedby="inputGroupPrepend" disabled required>
+                                    <input type="number" class="form-control" id="qtdacompanhante" placeholder="Quantidade" name="quantidade" aria-describedby="inputGroupPrepend" disabled required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="acompanhante" onchange="habilitar()"  required>
+                                        <input class="form-check-input" type="checkbox" value="" id="acompanhante" onchange="habilitar()">
                                         <label class="form-label">Eu irei levar acompanhantes !</label>
                                     </div>
                                 </div>
@@ -201,7 +202,7 @@
                             <div class="form-row">
                                 <div class="col-md-12 mt-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="visitante" name="visita" required>
+                                        <input class="form-check-input" type="checkbox" value="1" id="visitante" name="visita">
                                         <label class="form-label">Sou visitante</label>
                                     </div>
                                 </div>

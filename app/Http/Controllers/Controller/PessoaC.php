@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cookie;
 
 class PessoaC extends Controller
 {
@@ -11,7 +12,7 @@ class PessoaC extends Controller
 
     }
     /**---------------------------------Views --------------------------------------------------------*/
-    public function viewAnuncios(){
+    public function viewAnuncios(Request $req){
         return view('anuncios');
     }
     public function viewContato(){
