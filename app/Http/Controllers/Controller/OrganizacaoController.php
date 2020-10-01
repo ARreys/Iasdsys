@@ -28,4 +28,13 @@ class OrganizacaoController extends Controller
     {
         return view("organizacao/visitantes");
     }
+    public function administradoresView()
+    {
+        return view("organizacao/administradores");
+    }
+    public function presencasView()
+    {
+        return view("organizacao/marcarampresenca");
+    }
 }
+

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Set-2020 às 16:37
+-- Tempo de geração: 01-Out-2020 às 20:25
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.3.22
 
@@ -74,6 +74,7 @@ CREATE TABLE `pessoa` (
   `deleted_at` datetime DEFAULT NULL,
   `nome` varchar(45) DEFAULT NULL,
   `telefone` varchar(45) DEFAULT NULL,
+  `data_nasc` date DEFAULT NULL,
   `visitante` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -89,9 +90,21 @@ CREATE TABLE `presenca` (
   `alterado` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `quantidade_marcada` int(11) DEFAULT NULL,
+  `dia_presenca` date DEFAULT NULL,
   `pessoa_id` int(11) NOT NULL,
   `local_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `quantidade_e_capacidade`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `quantidade_e_capacidade` (
+`quantidade` decimal(33,0)
+,`capacidade` int(11)
+);
 
 -- --------------------------------------------------------
 
@@ -108,6 +121,15 @@ CREATE TABLE `usuario` (
   `telefone` varchar(45) DEFAULT NULL,
   `senha` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Um usuario cadastrar muito eventos';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `quantidade_e_capacidade`
+--
+DROP TABLE IF EXISTS `quantidade_e_capacidade`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `quantidade_e_capacidade`  AS  select sum(`p`.`quantidade_marcada`) + count(0) AS `quantidade`,`l`.`capacidade` AS `capacidade` from (`presenca` `p` join `local` `l` on(`l`.`id` = `p`.`local_id`)) ;
 
 --
 -- Índices para tabelas despejadas

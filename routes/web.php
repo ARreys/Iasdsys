@@ -39,9 +39,16 @@ Route::prefix("/user-admin")->group(function(){
 
 /* Rota post do formulário para organização */
 Route::post('/envioform', 'Controller\SegurancaController@login')->name('organizacao');
+Route::get('/removeranuncio', "Controller\OrganizacaoController@removeranuncioView")->name("removeranuncio");
+Route::get('/visitantes', "Controller\OrganizacaoController@visitantesView")->name("visitantes");
+Route::get('/presencas', "Controller\OrganizacaoController@presencasView")->name("presencas");
+Route::get('/administradores', "Controller\OrganizacaoController@administradoresView")->name("admins");
+/* ---------------------------------------- */
+
 /* ---------------------------------------- */
 
 /* Rota get painel */
+
 
 /* Rota post do formulário para administração */
 Route::get('/envioform', function() {
