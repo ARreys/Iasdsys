@@ -69,10 +69,6 @@ button {
     color: white;
 }
 
-.container1 {
-    min-height: 100%;
-}
-
 .container2 {
     padding: 20px;
 }
@@ -81,10 +77,20 @@ button {
     padding: 20px;
 }
 
+#parallax-image {
+    height: 70%;
+    box-shadow: inset 0px 10px 40px 0px black;
+}
+
+#parallax-image2 {
+    height: 300px;
+    box-shadow: inset 0px 5px 40px 0px black;
+}
+
 .linha1 {
-    margin-top: 5px;
     color: white;
     background-color: #411e1e;
+    box-shadow: 0px -10px 40px 0px black;
     padding: 0 45px;
 }
 
@@ -165,6 +171,7 @@ button {
 
 .sobreaigreja {
     font-family: NotoSans-Regular;
+    box-shadow: 0px -10px 40px 0px black;
     min-height: 40%;
 }
 
@@ -190,11 +197,12 @@ button {
     box-shadow: 0 0 10px #dff119, 0 0 40px #dff119, 0 0 80px #dff119;
 }
 
-.mais-informacoes {
+
+/* .mais-informacoes {
     font-family: NotoSans-Regular;
     min-height: 100%;
     background: #343a40;
-}
+} */
 
 .card-info {
     padding-top: 10px;
@@ -412,6 +420,9 @@ button {
     }
     /* ------------------------- */
     /* Tela inicial */
+    #parallax-image {
+        height: 70%;
+    }
     .tela-inicio .row p {
         font-size: 1.4rem;
     }
@@ -506,6 +517,18 @@ button {
         transition: 0.5s;
         box-shadow: 0 0 10px #dff119;
     }
+    .linha1 {
+        padding: 10px;
+    }
+    .linha2 {
+        padding: 10px;
+    }
+    .linha3 {
+        padding: 10px;
+    }
+    .linha4 {
+        padding: 10px;
+    }
     /* ------------------------- */
     /* Contatos / localização */
     .contatos-localizacao {
@@ -527,6 +550,3 @@ button {
     }
     /* ------------------------- */
 }
-
-
-/* ------------------------- */

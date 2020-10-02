@@ -3,7 +3,7 @@
     @component('componentes.head')
     @endcomponent
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark header">
 
         <!-- Navbar brand -->
         <img class="rounded-circle" src="{{asset('./img/logo.jpg')}}" alt="logo_header"></div>

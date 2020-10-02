@@ -10,9 +10,9 @@
             {{ session('msg.texto') }}
         @endcomponent
     @endif
-    <div class="tela-inicio container-fluid text-white" style="background: no-repeat center/cover url('{{ asset('img/img-telainicio.jpg')}}');">
-        <div class="container1 item-fluid">
-            <div class="container">
+    <div id="parallax-image" style="background-image: url('{{ asset('img/img-telainicio.jpg')}}'); background-attachment: fixed; backgroun-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div class="tela-inicio container1 item-fluid">
+            <div class="container text-white">
                 <div class="content-telainicio row">
                     <div class="col-sm-12 text-center text-black my-5">
                         <h1 class="titulo">IASD Central de Parnaíba</h1>
@@ -40,6 +40,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid text-center text-white sobreaigreja"style="background: no-repeat center/cover url('{{ asset('img/sobre.jpg')}}'); padding; 15px;">
         <div class="container2 container">
             <div class="row mb-15">
@@ -66,75 +67,68 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid text-center text-white mais-informacoes">
-        <div class="row">
-            <div class="col-md-12 mt-15 card-info">
-                <div class="col-md-12 card-info-titulo">
-                    <h1>Quero Estudar !</h1>
-                    <div style="background-color: rgb(20, 69, 155); width: 100%; height: 3px;"></div>
-                </div>
+
+    <div id="parallax-image2" style="background-image: url('{{ asset('img/mais-informacoes.jpg')}}'); background-attachment: fixed; backgroun-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+
+            <div class="container-fluid text-center text-white mais-informacoes">
                 <div class="row linha1">
                     <div class="col-md-6 img-legenda-container mt-2 mb-2">
                         <div class="caption-imagem">
-                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/>
+                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
                         </div>
                     </div>
-
-                    <footer class="page-footer">
-                        <div class="footer-copyright text-center text-white py-3">
-                            Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>
-                        </div>
-                    </footer>
-                    <!-- Copyright -->
-
-
-                    <div class="col-md-6 img-legenda-container mt-2 mb-2">
-                        <div class="caption-imagem">
-                            <img src="{{asset('img/novotempo.jpg')}}" class="img-fluid"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="row linha3">
-                    <div class="col-md-6 img-legenda-container mt-2 mb-2">
-                        <div class="caption-imagem">
-                            <img src="{{asset('img/radionovotempo.jpg')}}" class="img-fluid"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                        <div class="texto-caption">
-                            <h2>Rádio Novo Tempo</h2>
-                            <a onclick="window.open('https://www.novotempo.com/radio/#onde-ouvir')">
-                                <button type="button" class="ntplay">Ouvir ao vivo !</button>
-                            </a>
-                            <div class="legenda-imagem" style="margin-top: 15px;">
-                                <h4>Legenda</h4>
-                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="row linha4">
                     <div class="col-md-6 mt-3">
                         <div class="texto-caption">
                             <h2>Peça seu estudo bíblico</h2>
                             <a onclick="window.open('https://biblia.com.br')">
                                 <button type="button" class="crsbiblico">Pedir agora !</button>
                             </a>
+                            <div class="legenda-imagem" style="margin-top: 15px;">
+                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                            </div>
                         </div>
-                        <div class="legenda-imagem" style="margin-top: 15px;">
-                            <h4>Legenda</h4>
-                            <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                    </div>
+                </div>
+
+                <div class="row linha2">
+                    <div class="col-md-6 mt-3">
+                        <div class="texto-caption">
+                            <h2>Canal Novo Tempo</h2>
+                                <a onclick="window.open('https://ntplay.com/aovivo')">
+                                    <button type="button" class="ntplay">Assistir ao vivo !</button>
+                                </a>
+                            <div class="legenda-imagem" style="margin-top: 15px;">
+                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 img-legenda-container mt-2 mb-2">
                         <div class="caption-imagem">
-                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/>
+                            <img src="{{asset('img/novotempo.jpg')}}" class="img-fluid"/>
                         </div>
                     </div>
-                </div> -->
+                </div>
+
+                <div class="row linha3">
+                    <div class="col-md-6 img-legenda-container mt-2 mb-2">
+                        <div class="caption-imagem">
+                            <img src="{{asset('img/radionovotempo.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <div class="texto-caption">
+                            <h2>Rádio Novo Tempo</h2>
+                             <a onclick="window.open('https://www.novotempo.com/radio/#onde-ouvir')">
+                                <button type="button" class="ntplay">Ouvir ao vivo !</button>
+                            </a>
+                            <div class="legenda-imagem" style="margin-top: 15px;">
+                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+
     <footer class="page-footer">
         <div class="footer-copyright text-center text-white py-3">
             Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>
