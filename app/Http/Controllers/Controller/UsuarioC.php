@@ -19,6 +19,18 @@ class UsuarioC extends Controller
     public function viewPainel(Request $req){
         return view('organizacao.painel');
     }
+    public function viewVisitantes(Request $req){
+        return view('organizacao.visitantes');
+    }
+    public function viewMarcaramPresenca(Request $req){
+        return view('organizacao.marcarampresenca');
+    }
+    public function viewAdmin(Request $req){
+        return view('organizacao.administradores');
+    }
+    public function viewRemoveAnuncio(Request $req){
+        return view('organizacao.removeranuncio');
+    }
 
     /**
      * login

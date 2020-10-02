@@ -42,7 +42,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#adicionaranuncio">Adicionar Anúncio</button>
-                                <a class="nav-link" href="{{route('removeranuncio')}}">Remover Anúncio</a>
+                                <a class="nav-link" href="{{route('user.view.removerAnuncio')}}">Remover Anúncio</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -52,17 +52,17 @@
                         </a>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link" href="{{route('visitantes')}}">
+                                <a class="nav-link" href="{{route('user.view.visitante')}}">
                                     Visitantes
                                 </a>
-                                <a class="nav-link collapsed" href="{{route('presencas')}}">
+                                <a class="nav-link" href="{{route('user.view.pessoaPresente')}}">
                                     Marcaram Presença
                                 </a>
                             </nav>
->>>>>>> d2709a1616c7da5bb4ce3c7323a1b8145bb5a548
+
                         </div>
                         <div class="sb-sidenav-menu-heading">Administração</div>
-                        <a class="nav-link" href="{{route('admins')}}">
+                        <a class="nav-link" href="{{route('user.view.admin')}}">
                             <div class="sb-nav-link-icon"><i data-feather="search"></i></div>
                             Administradores
                         </a>

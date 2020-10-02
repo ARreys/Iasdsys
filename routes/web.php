@@ -26,34 +26,20 @@ Route::prefix("/common")->group(function(){
 Route::prefix("/user-admin")->group(function(){
     /** Painel administração */
     Route::get('/painel', 'Controller\UsuarioC@viewPainel')->name('user.view.painel');
+    /**View Tabela de Visitantes */
+    Route::get('/pessoa/visitantes', 'Controller\UsuarioC@viewVisitantes')->name('user.view.visitante');
+    /**View Tabela de marcaram presença */
+    Route::get('pessoa/agendada', 'Controller\UsuarioC@viewMarcaramPresenca')->name('user.view.pessoaPresente');
+    /**Tabela de administradores(usaurios) */
+    Route::get('/admins', 'Controller\UsuarioC@viewAdmin')->name('user.view.admin');
+    /**Remover anuncio */
+    Route::get('/remover/anuncio', 'Controller\UsuarioC@viewRemoveAnuncio')->name('user.view.removerAnuncio');
     /** Login e logout */
     Route::post('/login', 'Controller\UsuarioC@login')->name('user.login');
     Route::get('/logout', 'Controller\UsuarioC@logout')->name('user.logout');
 });
 
 
-
-
-
-/* ---------------------------------------- */
-
-/* Rota post do formulário para organização */
-Route::post('/envioform', 'Controller\SegurancaController@login')->name('organizacao');
-Route::get('/removeranuncio', "Controller\OrganizacaoController@removeranuncioView")->name("removeranuncio");
-Route::get('/visitantes', "Controller\OrganizacaoController@visitantesView")->name("visitantes");
-Route::get('/presencas', "Controller\OrganizacaoController@presencasView")->name("presencas");
-Route::get('/administradores', "Controller\OrganizacaoController@administradoresView")->name("admins");
-/* ---------------------------------------- */
-
-/* ---------------------------------------- */
-
-/* Rota get painel */
-
-
-/* Rota post do formulário para administração */
-Route::get('/envioform', function() {
-    return view('inicio');
-})->name("usernaoencontrado");
 /* ---------------------------------------- */
 
 
