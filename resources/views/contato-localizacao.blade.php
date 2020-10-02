@@ -26,13 +26,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <footer class="page-footercontato-localizacao">
-            <div class="footer-copyright text-center text-white py-3">
-                Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>
-            </div>
-        </footer>
+            <footer class="page-footercontato-localizacao">
+                <div class="footer-copyright text-center text-white py-3">
+                    Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>
+                </div>
+            </footer>
         <!-- Copyright -->
+        </div>
     </div>
     <script>feather.replace();</script>
     <script>
