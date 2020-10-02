@@ -31,7 +31,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Análise</div>
-                        <a class="nav-link" href="{{route('painel')}}">
+                        <a class="nav-link" href="{{route('user.view.painel')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Painel de Controle
                         </a>
@@ -44,7 +44,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#adicionaranuncio">Adicionar Anúncio</button>
-                                <a class="nav-link" href="{{route('removeranuncio')}}">Remover Anúncio</a>
+                                <a class="nav-link" href="{{route('user.view.removerAnuncio')}}">Remover Anúncio</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -54,16 +54,17 @@
                         </a>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link" href="{{route('visitantes')}}">
+                                <a class="nav-link" href="{{route('user.view.visitante')}}">
                                     Visitantes
                                 </a>
-                                <a class="nav-link collapsed" href="{{route('presencas')}}">
+                                <a class="nav-link" href="{{route('user.view.pessoaPresente')}}">
                                     Marcaram Presença
                                 </a>
                             </nav>
+
                         </div>
                         <div class="sb-sidenav-menu-heading">Administração</div>
-                        <a class="nav-link" href="{{route('admins')}}">
+                        <a class="nav-link" href="{{route('user.view.admin')}}">
                             <div class="sb-nav-link-icon"><i data-feather="search"></i></div>
                             Administradores
                         </a>
@@ -74,15 +75,17 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">Visitantes</h1>
+                    <h1 class="mt-4">Painel de Controle</h1>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
-                            Visitantes
+                            Marcaram Presença
+                            <button type="button" class="btn btn-primary botaofecharmarcacao">Fechar Marcação</button>
                             <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
                         </div>
                         @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
                             <button type="button" class="btn btn-danger">Remover</button>
+                            <button type="button" class="btn btn-primary">Alterar</button>
                         @endcomponent
                     </div>
                 </div>
