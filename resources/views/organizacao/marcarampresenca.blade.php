@@ -10,7 +10,7 @@
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">IASD Central PHB</a>
+        <a class="navbar-brand" href="{{route('inicio')}}">IASD Central PHB</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <div class="input-group"></div>
@@ -80,13 +80,30 @@
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
                             Marcaram Presença
-                            <button type="button" class="btn btn-primary botaofecharmarcacao">Fechar Marcação</button>
-                            <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
+                            <a data-toggle="modal" href="#confirmarexclusaodetodos">
+                                <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
+                            </a>
                         </div>
-                        @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
-                            <button type="button" class="btn btn-danger">Remover</button>
-                            <button type="button" class="btn btn-primary">Alterar</button>
-                        @endcomponent
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="marcarampresenca" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nome completo</th>
+                                            <th scope="col">Idade</th>
+                                            <th scope="col">Contato</th>
+                                            <th scope="col">Quantidade Acompanhante</th>
+                                            <th scope="col">Visitante</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- ELEMENTO DE TABELA (PUXAR DO BANCO DE DADOS) -->
+                                    @component('componentes.tabela', ['idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
+                                    @endcomponent
+                                    <!-- FIM DO ELEMENTO -->
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -131,6 +148,92 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 <button type="submit" class="btn btn-primary">Criar Anúncio</button>
+            </div>
+        </form>
+    @endcomponent
+    @component('componentes.modal', ['id' => 'confirmarexclusao', 'titulo' => 'Confirmar Exclusão'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Esta pessoa será excluida permanentemente, tem certeza que deseja prosseguir ?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </div>
+        </form>
+    @endcomponent
+    @component('componentes.modal', ['id' => 'confirmarexclusaodetodos', 'titulo' => 'Confirmar exclusão de todos os anúncios'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Todos as pessoas serão excluidas permanentemente, tem certeza que deseja prosseguir ?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-danger">Excluir Todos</button>
+            </div>
+        </form>
+    @endcomponent
+    @component('componentes.modal', ['id' => 'modalalterarpessoa', 'titulo' => 'Alterar dados de presença'])
+        <form class="needs-validation text-black" novalidate method="POST" action="{{ route('pessoa.create.presenca') }}">
+            @csrf
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome-completo" placeholder="Insira o novo nome completo" name="nome" required>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">Ops, seu nome.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom02">Data Nascimento</label>
+                         <input type="date" class="form-control" id="idade" placeholder="Insira a nova data de nascimento" name="data_nasc" required>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">Ops, sua idade.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="mb-3">
+                            <label for="validationCustom03">Contato</label>
+                            <input type="text" class="form-control" id="contato" placeholder="(com DDD)*" name="telefone" required>
+                            <div class="valid-feedback">Tudo certo!</div>
+                            <div class="invalid-feedback">Ops, seu contato.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <input type="number" class="form-control" id="qtdacompanhante" placeholder="Quantidade" name="quantidade" aria-describedby="inputGroupPrepend" disabled required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="acompanhante" onchange="habilitar()" >
+                            <label class="form-label">Levará acompanhantes</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="visitante" name="visita">
+                            <label class="form-label">É visitante</label>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Confirmar</button>
             </div>
         </form>
     @endcomponent

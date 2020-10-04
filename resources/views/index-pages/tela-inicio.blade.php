@@ -70,65 +70,55 @@
 
     <div id="parallax-image2" style="background-image: url('{{ asset('img/mais-informacoes.jpg')}}'); background-attachment: fixed; backgroun-position: center; background-repeat: no-repeat; background-size: cover;"></div>
 
-            <div class="container-fluid text-center text-white mais-informacoes">
-                <div class="row linha1">
-                    <div class="col-md-6 img-legenda-container mt-2 mb-2">
-                        <div class="caption-imagem">
-                            <img src="{{asset('img/cursobiblico.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                        <div class="texto-caption">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col1" style="padding: 5px">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/cursobiblico.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <div class="card-body">
                             <h2>Peça seu estudo bíblico</h2>
-                            <a onclick="window.open('https://biblia.com.br')">
-                                <button type="button" class="crsbiblico">Pedir agora !</button>
-                            </a>
-                            <div class="legenda-imagem" style="margin-top: 15px;">
-                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a onclick="window.open('https://biblia.com.br')">
+                                    <button type="button" class="crsbiblico">Pedir agora !</button>
+                                </a>
+                                <small class="text-muted">Peça Gratuitamente !</small>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="row linha2">
-                    <div class="col-md-6 mt-3">
-                        <div class="texto-caption">
+                <div class="col-md-4 col2" style="padding: 5px">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/novotempo.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <div class="card-body">
                             <h2>Canal Novo Tempo</h2>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
                                 <a onclick="window.open('https://ntplay.com/aovivo')">
                                     <button type="button" class="ntplay">Assistir ao vivo !</button>
                                 </a>
-                            <div class="legenda-imagem" style="margin-top: 15px;">
-                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 img-legenda-container mt-2 mb-2">
-                        <div class="caption-imagem">
-                            <img src="{{asset('img/novotempo.jpg')}}" class="img-fluid"/>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="row linha3">
-                    <div class="col-md-6 img-legenda-container mt-2 mb-2">
-                        <div class="caption-imagem">
-                            <img src="{{asset('img/radionovotempo.jpg')}}" class="img-fluid"/> <!-- Aqui ponto de css -->
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                        <div class="texto-caption">
+                <div class="col-md-4 col3" style="padding: 5px">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/radionovotempo.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <div class="card-body">
                             <h2>Rádio Novo Tempo</h2>
-                             <a onclick="window.open('https://www.novotempo.com/radio/#onde-ouvir')">
-                                <button type="button" class="ntplay">Ouvir ao vivo !</button>
-                            </a>
-                            <div class="legenda-imagem" style="margin-top: 15px;">
-                                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor</p>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a onclick="window.open('https://www.novotempo.com/radio/#onde-ouvir')">
+                                    <button type="button" class="ntplay">Ouvir ao vivo !</button>
+                                </a>
+                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </div>
     <footer class="page-footer">
         <div class="footer-copyright text-center text-white py-3">
             Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>

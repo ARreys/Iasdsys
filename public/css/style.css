@@ -84,7 +84,7 @@ button {
 }
 
 #parallax-image {
-    height: 70%;
+    height: 100%;
     box-shadow: inset 0px 10px 40px 0px black;
 }
 
@@ -93,46 +93,32 @@ button {
     box-shadow: inset 0px 5px 40px 0px black;
 }
 
-.linha1 {
-    color: white;
+.col1 .card-body {
     background-color: #411e1e;
-    box-shadow: 0px -10px 40px 0px black;
-    padding: 0 45px;
+    color: white;
 }
 
-.linha1 h2 {
+.col1 h2 {
     text-shadow: 0px 0px 10px white;
 }
 
-.linha2 {
+.col2 .card-body {
     color: white;
     background: -webkit-linear-gradient(-135deg, #5873ba, #2d60e1);
     background: -o-linear-gradient(-135deg, #5873ba, #2d60e1);
     background: -moz-linear-gradient(-135deg, #5873ba, #2d60e1);
-    padding: 0 45px;
 }
 
-.linha2 h2 {
+.col2 h2 {
     text-shadow: 0px 0px 10px white;
 }
 
-.linha3 {
-    color: white;
+.col3 .card-body {
     background-color: #2A2E45;
-    padding: 0 45px;
-}
-
-.linha3 h2 {
-    text-shadow: 0px 0px 10px white;
-}
-
-.linha4 {
     color: white;
-    background-color: #9BA2FF;
-    padding: 0 45px;
 }
 
-.linha4 h2 {
+.col3 h2 {
     text-shadow: 0px 0px 10px white;
 }
 
@@ -383,17 +369,13 @@ button {
 
 /* Geral */
 
-.col-md-6 img {
+.col-md-4 img {
     width: 100%;
     display: block;
     margin: auto;
 }
 
-.row .col-md-6 img {
-    border-radius: 15px;
-}
-
-.row .col-md-6 p {
+.row .col-md-4 p {
     margin-top: 8px;
     font-family: NotoSans-Regular;
 }

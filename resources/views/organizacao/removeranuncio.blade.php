@@ -10,7 +10,7 @@
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">IASD Central PHB</a>
+        <a class="navbar-brand" href="{{route('inicio')}}">IASD Central PHB</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -81,14 +81,28 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
-                            Marcaram Presença
-                            <button type="button" class="btn btn-primary botaofecharmarcacao">Fechar Marcação</button>
-                            <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
+                            Anúncios Ativos
+                            <a data-toggle="modal" href="#confirmarexclusaodetodos">
+                                <button type="button" class="btn btn-danger botaoremovertodos" data-target="#confirmarexlusaodetodos">Remover todos</button>
+                            </a>
                         </div>
-                        @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
-                            <button type="button" class="btn btn-danger">Remover</button>
-                            <button type="button" class="btn btn-primary">Alterar</button>
-                        @endcomponent
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="anuncios-ativos" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Título</th>
+                                            <th scope="col">Texto</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- ELEMENTO DE TABELA (PUXAR DO BANCO DE DADOS) -->
+                                    @component('componentes.tabela-anuncios', ['idanuncio' => 'idanuncio', 'titulo' => 'Titulo de um anuncio qualquer', 'texto' => 'texto de um anuncio qualquer'])
+                                    @endcomponent
+                                    <!-- FIM DO ELEMENTO -->
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -133,6 +147,36 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 <button type="submit" class="btn btn-primary">Criar Anúncio</button>
+            </div>
+        </form>
+    @endcomponent
+    @component('componentes.modal', ['id' => 'confirmarexclusao', 'titulo' => 'Confirmar Exclusão'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Esse anúncio será excluido permanentemente, tem certeza que deseja prosseguir ?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </div>
+        </form>
+    @endcomponent
+    @component('componentes.modal', ['id' => 'confirmarexclusaodetodos', 'titulo' => 'Confirmar exclusão de todos os anúncios'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Todos os anúncios serão excluidos permanentemente, tem certeza que deseja prosseguir ?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-danger">Excluir Todos</button>
             </div>
         </form>
     @endcomponent

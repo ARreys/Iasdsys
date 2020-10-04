@@ -9,8 +9,9 @@
 @endcomponent
 
 <body class="sb-nav-fixed">
+
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">IASD Central PHB</a>
+        <a class="navbar-brand" href="{{route('inicio')}}">IASD Central PHB</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <ul class="navbar-nav ml-auto ml-md-0">
@@ -23,6 +24,7 @@
             </li>
         </ul>
     </nav>
+
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -70,6 +72,7 @@
                 </div>
             </nav>
         </div>
+
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
@@ -77,17 +80,30 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
-                            Marcaram Presença
-                            <button type="button" class="btn btn-primary botaofecharmarcacao">Fechar Marcação</button>
-                            <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
+                            Administradores
+                            <a data-toggle="modal" href="#adicionaradmin" style="float: right;">
+                                <button type="button" class="btn btn-success" data-target="#adicionaradmin">Adicionar Administrador</button>
+                            </a>
                         </div>
-                        @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
-                            <button type="button" class="btn btn-danger">Remover</button>
-                            <button type="button" class="btn btn-primary">Alterar</button>
-                        @endcomponent
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="tabela-admin" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- ELEMENTO DE TABELA (PUXAR DO BANCO DE DADOS) -->
+                                    @component('componentes.tabela-admin', ['id' => '12345'])
+                                    @endcomponent
+                                    <!-- FIM DO ELEMENTO -->
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
+
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
@@ -95,12 +111,15 @@
                     </div>
                 </div>
             </footer>
+
         </div>
     </div>
+
     <script>feather.replace();</script>
     <script src="{{asset('js/painel-jquery-3.5.1.min.js')}}" crossorigin="anonymous"></script>
     <script src="{{asset('js/painel.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+
     @component('componentes.modal', ['id' => 'adicionaranuncio', 'titulo' => 'Adicionar Anúncio'])
         <form class="needs-validation text-black" novalidate>
             <div class="form-column">
@@ -132,6 +151,77 @@
             </div>
         </form>
     @endcomponent
+
+    @component('componentes.modal', ['id' => 'alteraradmin', 'titulo' => 'Alterar Administrador'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Novo ID</label>
+                        <input type="text" class="form-control" id="nome-completo" placeholder="Insira o novo ID desse admin" required>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">Id ?.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom02">Nova Senha</label>
+                        <input type="text" class="form-control" id="idade" placeholder="Insira a nova senha" required>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">Senha ?.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Aplicar Alterações</button>
+            </div>
+        </form>
+    @endcomponent
+
+    @component('componentes.modal', ['id' => 'adicionaradmin', 'titulo' => 'Adicionar Administrador'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">ID</label>
+                        <input type="text" class="form-control" id="nome-completo" placeholder="Insira o ID" required>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">Id ?.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom02">Senha</label>
+                        <input type="text" class="form-control" id="idade" placeholder="Insira a senha" required>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">Senha ?.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+            </div>
+        </form>
+    @endcomponent
+
+    @component('componentes.modal', ['id' => 'confirmarexclusao', 'titulo' => 'Confirmar Exclusão'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Esse administrador será excluido permanentemente, tem certeza que deseja prosseguir ?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </div>
+        </form>
+    @endcomponent
+
 </body>
     @component('componentes.scripts')
     @endcomponent
