@@ -78,6 +78,9 @@
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
                             Marcaram Presença
+                            <a data-toggle="modal" href="#modalcapacidade">
+                                <button type="button" class="btn btn-primary botaoremovertodos" style="margin-left: 5px;" >Alterar Capacidade</button>
+                            </a>
                             <a data-toggle="modal" href="#confirmarexclusaodetodos">
                                 <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
                             </a>
@@ -161,6 +164,24 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 <button type="submit" class="btn btn-danger">Excluir</button>
+            </div>
+        </form>
+    @endcomponent
+    @component('componentes.modal', ['id' => 'modalcapacidade', 'titulo' => 'Capacidade de inscrição'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                <div class="col-md-12 mb-3">
+                        <div class="mb-3">
+                            <label for="validationCustom03">Insira o limite de inscrições</label>
+                            <input type="number" class="form-control" id="limiteinscricao" placeholder="Insira a capacidade" name="quantidade" aria-describedby="inputGroupPrepend">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Aplicar</button>
             </div>
         </form>
     @endcomponent
