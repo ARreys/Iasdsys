@@ -89,7 +89,7 @@ class PessoaCL
         return $this;
     }
 
-    public function verificarIdade(){
+    public function verificarIdade($tipo = 1){
     	$time = strtotime($this->getDataNasc());
     	if($time === false){
             return false;
@@ -103,7 +103,11 @@ class PessoaCL
         if ($month_diff < 0 || ($month == date('m') && $day > date('d')) ){
             $year_diff--;
         }
-        return ($year_diff >= 13)?true:false;
+        if($tipo == 1){
+            return ($year_diff >= 13)?true:false;
+        }else{
+            return $year_diff;
+        }
     }
 
     public function create(){

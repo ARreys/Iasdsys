@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Controller;
 
 
 
+use App\Model\Pessoa;
+use App\Model\Presenca;
 use App\Classes\LocalCL;
 use App\Classes\PessoaCL;
 use App\Classes\PresencaCL;
@@ -20,6 +22,13 @@ class PresencaC extends Controller
                 'agendarPresenca'
             ]]);
     }
+
+    /**
+     * agendarPresenca
+     * Realiza o agendamento, dizendo que a pessou marcou presença no local fornecido
+     * @param  mixed $req
+     * @return void
+     */
     public function agendarPresenca(Request $req)
     {
         //criar pessoa e pegar id
@@ -53,4 +62,5 @@ class PresencaC extends Controller
         }
         return redirect()->route('inicio');
     }
+
 }

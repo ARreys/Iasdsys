@@ -83,10 +83,11 @@
                             <button type="button" class="btn btn-primary botaofecharmarcacao">Fechar Marcação</button>
                             <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
                         </div>
-                        @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
+                        {{--  @component('componentes.tabela', ['idtabela' => 'tabelapresenca', 'idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
                             <button type="button" class="btn btn-danger">Remover</button>
                             <button type="button" class="btn btn-primary">Alterar</button>
-                        @endcomponent
+                        @endcomponent  --}}
+                        @include('includes.tabela_painel')
                     </div>
                 </div>
             </main>

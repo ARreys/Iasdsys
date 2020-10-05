@@ -16,13 +16,13 @@ class Presenca extends Model
     protected $guarded = [];
 
     //presença possui pessoa
-    public function pesssoa()
+    public function pessoa()
     {
-        return $this->belongsTo(Model\Pessoa::class);
+        return $this->belongsTo(Pessoa::class);
     }
     //presença possui local
     public function local()
     {
-        return $this->belongsTo(Model\Local::class);
+        return $this->belongsTo(Local::class);
     }
 }

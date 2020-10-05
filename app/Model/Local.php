@@ -17,11 +17,11 @@ class Local extends Model
     //um local contem varios participantes presentes
     public function presenca()
     {
-        return $this->hasMany(Model\Presenca::class);
+        return $this->hasMany(Presenca::class);
     }
     //um local pode possui varios eventos num dia
     public function eventos()
     {
-        return $this->hasMany(Model\Evento::class);
+        return $this->hasMany(Evento::class);
     }
 }

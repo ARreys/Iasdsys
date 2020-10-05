@@ -16,11 +16,12 @@ class Evento extends Model
     //um evento possui um local(nessa situação)
     public function local()
     {
-        return $this->belongsTo(Model\Local::class);
+        return $this->belongsTo(Local::class);
     }
     //um evento é cadastrado, administrado por um usuario
     public function usuario()
     {
-        return $this->belongsTo(Model\Usuario::class);
+        return $this->belongsTo(Usuario::class);
     }
+
 }

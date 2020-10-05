@@ -2,10 +2,10 @@
 
 namespace App\Model;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as Modelo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Pessoa extends Model
+class Pessoa extends Modelo
 {
     use SoftDeletes;
     protected $table = 'pessoa';
@@ -18,6 +18,8 @@ class Pessoa extends Model
     //uma pessoa pode marca varias presenças em um local
     public function presenca()
     {
-        return $this->hasMany(Model\Presenca::class);
+        return $this->hasMany(Presenca::class);
     }
+
+
 }

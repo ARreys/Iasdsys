@@ -15,8 +15,6 @@ Route::get('/', function () {
 })->name('inicio');
 /* ----------------------------------------Area Comum Pessoa----------------------------------------- */
 Route::prefix("/common")->group(function(){
-    /* Rota anuncios */
-    Route::get('/anuncios', 'Controller\PessoaC@viewAnuncios')->name("anuncios");
     /* Rota contato */
     Route::get('/contato-localizacao','Controller\PessoaC@viewContato')->name("contato_localizacao");
     /** Marcar Presença*/
@@ -40,8 +38,13 @@ Route::prefix("/user-admin")->group(function(){
 });
 
 
-/* ---------------------------------------- */
-
+/* ----------------------------------------Evento------------------------------------------- */
+Route::prefix("/evento")->group(function(){
+    /* Rota criar evento */
+    Route::post('/upload', 'Controller\EventoC@create')->name('evento.create');
+    /**Routa de ver anuncios */
+    Route::get('/anuncios', 'Controller\EventoC@viewEvento')->name("anuncios");
+});
 
 Route::get('/start-system',function(){
     App\Model\Usuario::create([

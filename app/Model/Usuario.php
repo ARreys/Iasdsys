@@ -17,6 +17,6 @@ class Usuario extends Model
     //um usuario administra(cadastra) varios eventos
     public function eventos()
     {
-        return $this->hasMany(Model\Evento::class);
+        return $this->hasMany(Evento::class);
     }
 }

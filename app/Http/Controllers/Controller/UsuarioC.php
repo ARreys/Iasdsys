@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Controller;
 
+use App\Model\Pessoa;
 use App\Classes\Cookie;
+use App\Model\Presenca;
+use App\Classes\PessoaCL;
 use App\Classes\UsuarioCL;
+use App\Classes\PresencaCL;
 use Illuminate\Http\Request;
+use App\Classes\Configuracao;
 use App\Http\Controllers\Controller;
 
 class UsuarioC extends Controller
@@ -17,13 +22,42 @@ class UsuarioC extends Controller
             ]]);
     }
     public function viewPainel(Request $req){
-        return view('organizacao.painel');
+        $pessoa = Pessoa::join('presenca', 'pessoa.id', 'presenca.pessoa_id')
+        ->orderBy('presenca.dia_presenca','desc')
+        ->paginate(Configuracao::PAGINAS);
+        $ps = new PessoaCL();
+        foreach ($pessoa as $pessoas) {
+            $ps->setDataNasc($pessoas->data_nasc);
+            $pessoas->data_nasc = $ps->verificarIdade(2);
+        }
+
+        return view('organizacao.painel', compact('pessoa'));
     }
     public function viewVisitantes(Request $req){
-        return view('organizacao.visitantes');
+        $presencaCl = new PresencaCL();
+        $pessoa = Pessoa::join('presenca', 'pessoa.id', 'presenca.pessoa_id')
+        ->where('pessoa.visitante',1)
+        ->orderBy('presenca.dia_presenca','desc')
+        ->paginate(Configuracao::PAGINAS);
+        $ps = new PessoaCL();
+        foreach ($pessoa as $pessoas) {
+            $ps->setDataNasc($pessoas->data_nasc);
+            $pessoas->data_nasc = $ps->verificarIdade(2);
+        }
+        return view('organizacao.visitantes', compact('pessoa'));
     }
     public function viewMarcaramPresenca(Request $req){
-        return view('organizacao.marcarampresenca');
+        $presencaCl = new PresencaCL();
+        $pessoa = Pessoa::join('presenca', 'pessoa.id', 'presenca.pessoa_id')
+        ->where('presenca.dia_presenca',$presencaCl->proximaData())
+        ->orderBy('presenca.dia_presenca','desc')
+        ->paginate(Configuracao::PAGINAS);
+        $ps = new PessoaCL();
+        foreach ($pessoa as $pessoas) {
+            $ps->setDataNasc($pessoas->data_nasc);
+            $pessoas->data_nasc = $ps->verificarIdade(2);
+        }
+        return view('organizacao.marcarampresenca',compact('pessoa'));
     }
     public function viewAdmin(Request $req){
         return view('organizacao.administradores');
@@ -47,6 +81,7 @@ class UsuarioC extends Controller
         if($usuario){
             session(['login' => 'true']);
             session(['nome' => $usuario->nome]);
+            session(['id' => $usuario->id]);
             session(['telefone' => $usuario->telefone]);
             if($req->conectado == true){
                 //altere 5 para qualquer outro numero de anos

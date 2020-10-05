@@ -7,10 +7,7 @@
     @endcomponent
     <div class="container text-black">
         <h3 style="color: white">Anúncios</h3>
-        @component('componentes.anuncio', ['titulo' => 'Anúncio 1', 'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu ex ea commodo consequat.'])
-        @endcomponent
-        @component('componentes.anuncio', ['titulo' => 'Anúncio 2', 'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu ex ea commodo consequat.'])
-        @endcomponent
+        @include('includes.anuncios')
     </div>
     <footer class="page-footeranuncios font-small blue pt-4">
         <div class="footer-copyright text-center text-white py-3">

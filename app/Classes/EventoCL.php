@@ -1,6 +1,8 @@
 <?php
 namespace App\Classes;
 
+use App\Model\Evento;
+
 class EventoCL
 {
     private $id;
@@ -137,5 +139,15 @@ class EventoCL
         $this->deletedAt = $deletedAt;
 
         return $this;
+    }
+
+    public function create($local_id,$foto){
+        Evento::create([
+            "titulo" => $this->getTitulo(),
+            "descricao" => $this->getDescricao(),
+            "foto" => $foto,
+            "local_id" => $local_id,
+            "usuario_id" => session('id')
+        ]);
     }
 }
