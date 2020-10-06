@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Controller;
 
+use App\Model\Evento;
 use App\Model\Pessoa;
+use App\Model\Usuario;
 use App\Classes\Cookie;
 use App\Model\Presenca;
 use App\Classes\PessoaCL;
@@ -60,12 +62,26 @@ class UsuarioC extends Controller
         return view('organizacao.marcarampresenca',compact('pessoa'));
     }
     public function viewAdmin(Request $req){
-        return view('organizacao.administradores');
+        $usuarios = Usuario::paginate(Configuracao::PAGINAS);
+        if(Configuracao::ADMIN != session('id')){
+            foreach($usuarios as $u){
+                $u->senha = "********";
+            }
+        }
+        return view('organizacao.administradores', compact('usuarios'));
     }
     public function viewRemoveAnuncio(Request $req){
-        return view('organizacao.removeranuncio');
+        $eventos = Evento::orderBy('criado', 'desc')->paginate(Configuracao::PAGINAS);
+        return view('organizacao.removeranuncio', compact('eventos'));
     }
-
+    public function create(Request $req){
+        Usuario::create([
+            "telefone" => $req->telefone,
+            "nome" => $req->nome,
+            "senha" => $req->senha
+        ]);
+        return redirect()->route('user.view.admin');
+    }
     /**
      * login
      *

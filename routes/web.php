@@ -32,6 +32,10 @@ Route::prefix("/user-admin")->group(function(){
     Route::get('/admins', 'Controller\UsuarioC@viewAdmin')->name('user.view.admin');
     /**Remover anuncio */
     Route::get('/remover/anuncio', 'Controller\UsuarioC@viewRemoveAnuncio')->name('user.view.removerAnuncio');
+    /**Route criar usuario */
+    Route::post('user-create', 'Controller\UsuarioC@create')->name('user.create');
+    /**Alterar capacidade do local em uso */
+    Route::post('user/local-capacidade', 'Controller\LocalC@alterarCapacidade')->name('local.capacidade');
     /** Login e logout */
     Route::post('/login', 'Controller\UsuarioC@login')->name('user.login');
     Route::get('/logout', 'Controller\UsuarioC@logout')->name('user.logout');
@@ -44,6 +48,10 @@ Route::prefix("/evento")->group(function(){
     Route::post('/upload', 'Controller\EventoC@create')->name('evento.create');
     /**Routa de ver anuncios */
     Route::get('/anuncios', 'Controller\EventoC@viewEvento')->name("anuncios");
+    /**Excluir anuncio */
+    Route::post('/delete', 'Controller\EventoC@delete')->name('evento.delete');
+    /**Limpar todos os dados */
+    Route::post('delete-all', 'Controller\EventoC@deleteAll')->name('evento.format');
 });
 
 Route::get('/start-system',function(){

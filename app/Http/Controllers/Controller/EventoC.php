@@ -21,7 +21,7 @@ class EventoC extends Controller
     }
 
     public function viewEvento(Request $req){
-        $eventos = Evento::paginate(Configuracao::PAGINAS);
+        $eventos = Evento::orderBy('criado','desc')->paginate(Configuracao::PAGINAS);
         return view('anuncios', compact('eventos'));
     }
 
@@ -38,5 +38,18 @@ class EventoC extends Controller
         $evento->create($local->id,$foto_blob);
         return redirect()->route('user.view.painel');
         // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+    }
+
+    public function delete(Request $req){
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        Evento::where('id',$req->id)->forceDelete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        return redirect()->route('user.view.removerAnuncio');
+    }
+    public function deleteAll(Request $req){
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::statement('truncate table evento');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        return redirect()->route('user.view.removerAnuncio');
     }
 }

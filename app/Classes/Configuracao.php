@@ -2,5 +2,8 @@
 namespace App\Classes;
 class Configuracao
 {
-    const PAGINAS = 15;
+    /**Paginas de registro */
+    const PAGINAS = 1;
+    /**Usaurio admin geral */
+    const ADMIN = 1;
 }

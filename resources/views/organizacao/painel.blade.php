@@ -10,7 +10,7 @@
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">IASD Central PHB</a>
+        <a class="navbar-brand" href="{{route('inicio')}}">IASD Central PHB</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></form>
         <ul class="navbar-nav ml-auto ml-md-0">
@@ -78,9 +78,14 @@
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
                             Marcaram Presença
-                            <button type="button" class="btn btn-primary botaofecharmarcacao">Fechar Marcação</button>
-                            <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
+                            <a data-toggle="modal" href="#modalcapacidade">
+                                <button type="button" class="btn btn-primary botaoremovertodos" style="margin-left: 5px;" >Alterar Capacidade</button>
+                            </a>
+                            <a data-toggle="modal" href="#confirmarexclusaodetodos">
+                                <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
+                            </a>
                         </div>
+
                         {{--  @component('componentes.tabela', ['idtabela' => 'tabelapresenca'])
                             <button type="button" class="btn btn-danger">Remover</button>
                             <button type="button" class="btn btn-primary">Alterar</button>
@@ -157,7 +162,6 @@
             </script>
         </form>
     @endcomponent
-
     @component('componentes.scripts')
 
 

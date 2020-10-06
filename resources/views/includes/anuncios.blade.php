@@ -26,3 +26,5 @@
     </div>
 </div>
 @endforelse
+
+{{ $eventos->links() }}
