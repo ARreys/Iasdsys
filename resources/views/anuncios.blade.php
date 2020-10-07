@@ -1,20 +1,21 @@
 <html lang="pt-br">
     @component('componentes.head')
     @endcomponent
-
-<body class="anuncios" id="anuncios">
     @component('componentes.header')
     @endcomponent
-    <div class="container text-black">
-        <h3 style="color: white">Anúncios</h3>
-        @include('includes.anuncios')
-    </div>
-    <footer class="page-footeranuncios font-small blue pt-4">
-        <div class="footer-copyright text-center text-white py-3">
-            Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo dia - Central - Parnaíba</a>
+<body class="anuncios" id="anuncios">
+    <div class="containeranuncios">
+        <div class="content">
+            <div class="container text-black">
+                <h3 style="color: white">Anúncios</h3>
+                @include('includes.anuncios')
+            </div>
         </div>
-    </footer>
-    <!-- Copyright -->
+    </div>
+
+    @component('componentes.footer')
+    @endcomponent
+
     @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
         <form action="" method="Post">
             <div class="form-group">

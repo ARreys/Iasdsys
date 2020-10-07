@@ -6,7 +6,7 @@
 <body id="contato-localizacao">
     <div class="contatos-localizacao">
         <div class="content">
-            <div class="container text-white">
+            <div class="container container-localizacao text-white">
                 <h3 class="title-container">Contato e localização</h1>
                 <div class="row linhamapa">
                     <div class="col-sm-12">
@@ -26,14 +26,10 @@
                     </div>
                 </div>
             </div>
-            <footer class="page-footercontato-localizacao">
-                <div class="footer-copyright text-center text-white py-3">
-                    Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>
-                </div>
-            </footer>
-        <!-- Copyright -->
         </div>
     </div>
+    @component('componentes.footer')
+    @endcomponent
     <script>feather.replace();</script>
     <script>
           var map = new ol.Map({

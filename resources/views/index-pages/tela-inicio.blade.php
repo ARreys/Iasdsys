@@ -68,9 +68,12 @@
         </div>
     </div>
 
-    <div id="parallax-image2" style="background-image: url('{{ asset('img/mais-informacoes.jpg')}}'); background-attachment: fixed; backgroun-position: center; background-repeat: no-repeat; background-size: cover;"></div>
-
         <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center text-black">
+                    <h1>Links Novo Tempo</h1>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-4 col1" style="padding: 5px">
                     <div class="card mb-4 box-shadow">
@@ -120,12 +123,8 @@
             </div>
         </div>
 
-    <footer class="page-footer">
-        <div class="footer-copyright text-center text-white py-3">
-            Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>
-        </div>
-    </footer>
-    <!-- Copyright -->
+        @component('componentes.footer')
+        @endcomponent
 
     @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
         <form class="needs-validation text-black" novalidate method="POST" action="{{ route('pessoa.create.presenca') }}">
