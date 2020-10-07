@@ -23,8 +23,12 @@
                         <td>{{($pessoas->visitante)?"Sim":"Não"}}</td>
                         <td>{{date('d/m/Y', strtotime($pessoas->dia_presenca))}}</td>
                         <td>
-                            <button type="button" class="btn btn-danger">Remover</button>
-                             <button type="button" class="btn btn-primary">Alterar</button>
+                            <a data-toggle="modal" href="#confirmarexclusao">
+                                <button type="button" class="btn btn-danger">Remover</button>
+                            </a>
+                            <a data-toggle="modal" href="#alterarpessoa">
+                                <button type="button" class="btn btn-primary">Alterar</button>
+                            </a>
                         </td>
                     </tr>
                 @empty

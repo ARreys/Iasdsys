@@ -2,6 +2,7 @@
 
     @component('componentes.head')
     @endcomponent
+
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark header">
 
@@ -34,9 +35,11 @@
                 </li>
             </ul>
             <!-- Links -->
+
         </div>
         <!-- Collapsible content -->
     </nav>
+
     @component('componentes.modal', ['id' => 'loginorganizacao', 'titulo' => 'Login Organização'])
         <form action="{{route('user.login')}}" method="POST">
             <div class="modal-body">

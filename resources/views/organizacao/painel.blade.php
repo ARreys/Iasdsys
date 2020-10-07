@@ -9,6 +9,7 @@
 @endcomponent
 
 <body class="sb-nav-fixed">
+
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="{{route('inicio')}}">IASD Central PHB</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
@@ -23,6 +24,7 @@
             </li>
         </ul>
     </nav>
+
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -70,6 +72,7 @@
                 </div>
             </nav>
         </div>
+
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
@@ -104,10 +107,69 @@
             </footer>
         </div>
     </div>
+
     <script>feather.replace();</script>
     <script src="{{asset('js/painel-jquery-3.5.1.min.js')}}" crossorigin="anonymous"></script>
     <script src="{{asset('js/painel.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+
+    @component('componentes.modal', ['id' => 'alterarpessoa', 'titulo' => 'Alterar Pessoa'])
+        <form class="needs-validation text-black" novalidate method="POST" action="{{ route('pessoa.create.presenca') }}">
+            @csrf
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Novo nome completo</label>
+                        <input type="text" class="form-control" id="nome-completo" placeholder="Insira o novo nome completo" name="nome" required>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">Ops, atualize o nome.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom02">Nova data Nascimento</label>
+                         <input type="date" class="form-control" id="idade" placeholder="Insira a nova idade" name="data_nasc" required>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">Ops, atualize a idade.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="mb-3">
+                            <label for="validationCustom03">Novo contato</label>
+                            <input type="text" class="form-control" id="contato" placeholder="(com DDD)*" name="telefone" required>
+                            <div class="valid-feedback">Tudo certo!</div>
+                            <div class="invalid-feedback">Ops, atualize o contato.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <input type="number" class="form-control" id="qtdacompanhante" placeholder="Quantidade" name="quantidade" aria-describedby="inputGroupPrepend" disabled required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="acompanhante" onchange="habilitar()" >
+                            <label class="form-label">Irá levar acompanhantes !</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="visitante" name="visita">
+                            <label class="form-label">É visitante</label>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Atualizar Pessoa</button>
+            </div>
+        </form>
+    @endcomponent
+
     @component('componentes.modal', ['id' => 'adicionaranuncio', 'titulo' => 'Adicionar Anúncio'])
         <form class="needs-validation text-black" novalidate method="POST" action="{{ route('evento.create') }}" enctype="multipart/form-data">
             @csrf
@@ -162,10 +224,67 @@
             </script>
         </form>
     @endcomponent
-    @component('componentes.scripts')
-
-
+    @component('componentes.modal', ['id' => 'confirmarexclusao', 'titulo' => 'Confirmar Exclusão'])
+        <form class="needs-validation text-black" novalidate method="POST" action="">
+            @csrf
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Coloque o id da pessoa para confirmar a exclusão!</label>
+                        <input type="number" name="id" class="form-control" step="1" min="1"/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </div>
+        </form>
     @endcomponent
+    @component('componentes.modal', ['id' => 'confirmarexclusaodetodos', 'titulo' => 'Confirmar exclusão de todas as presenças'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Todos as pessoas serão excluidas permanentemente, tem certeza que deseja prosseguir ?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-danger">Excluir Todos</button>
+            </div>
+        </form>
+    @endcomponent
+    @component('componentes.modal', ['id' => 'modalcapacidade', 'titulo' => 'Alterar capacidade'])
+        <form class="needs-validation text-black" novalidate>
+            <div class="form-column">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                            <label for="validationCustom01">Insira a capacidade</label>
+                            <input type="number" class="form-control" id="capacidadepresenca" placeholder="Capacidade" name="quantidade" aria-describedby="inputGroupPrepend">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Capacidade Atual</label>
+                        <input type="number" class="form-control" id="capacidadeatual" name="quantidade" aria-describedby="inputGroupPrepend">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-danger">Aplicar alterações</button>
+            </div>
+        </form>
+    @endcomponent
+
+    @component('componentes.scripts')
+    @endcomponent
+
+
+
+
 </body>
 
 

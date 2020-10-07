@@ -80,34 +80,11 @@
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
                             Visitantes
-                            <a data-toggle="modal" href="#confirmarexclusaodetodos">
+                            <!-- <a data-toggle="modal" href="#confirmarexclusaodetodos">
                                 <button type="button" class="btn btn-danger botaoremovertodos">Remover todos</button>
-                            </a>
+                            </a> -->
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="marcarampresenca" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Nome completo</th>
-                                            <th scope="col">Idade</th>
-                                            <th scope="col">Contato</th>
-                                            <th scope="col">Quantidade Acompanhante</th>
-                                            <th scope="col">Visitante</th>
-                                        </tr>
-                                    </thead>
-                                    <!-- ELEMENTO DE TABELA (PUXAR DO BANCO DE DADOS) -->
-                                    @component('componentes.tabela', ['idvisitante' => '0', 'nomecompleto' => 'Arthur Alves Reis', 'idade' => '20', 'contato' => '86 99591-3835', 'quantidadeacompanhante' => '0', 'visitante' => 'nao'])
-                                    @endcomponent
-                                    <!-- FIM DO ELEMENTO -->
-                                </table>
-                            </div>
-                        </div>
-<<<<<<< HEAD
                         @include('includes.tabela_painel')
-=======
->>>>>>> f63ce3ec2ec3759689888b8329feccbca2213b04
                     </div>
                 </div>
             </main>
@@ -120,17 +97,20 @@
             </footer>
         </div>
     </div>
+
     <script>feather.replace();</script>
     <script src="{{asset('js/painel-jquery-3.5.1.min.js')}}" crossorigin="anonymous"></script>
     <script src="{{asset('js/painel.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+
     @component('componentes.modal', ['id' => 'adicionaranuncio', 'titulo' => 'Adicionar Anúncio'])
-        <form class="needs-validation text-black" novalidate>
+        <form class="needs-validation text-black" novalidate method="POST" action="{{ route('evento.create') }}" enctype="multipart/form-data">
+            @csrf
             <div class="form-column">
                 <div class="form-row">
                     <div class="col-md-12 mb-3">
                         <label for="validationCustom01">Título do Anúncio</label>
-                        <input type="text" class="form-control" id="nome-completo" placeholder="Insira o título do anúncio" required>
+                        <input type="text" class="form-control" id="nome-completo" placeholder="Insira o título do anúncio" name="titulo" required>
                         <div class="valid-feedback">Tudo certo!</div>
                         <div class="invalid-feedback">Ops, e o título ?.</div>
                     </div>
@@ -138,14 +118,23 @@
                 <div class="form-row">
                     <div class="col-md-12 mb-3">
                         <label for="validationCustom02">Texto do anúncio</label>
-                        <input type="text" class="form-control" id="idade" placeholder="Insira o texto do anúncio" required>
+                        <textarea class="form-control" id="idade" name="descricao" required>
+
+                        </textarea>
                         <div class="valid-feedback">Tudo certo!</div>
                         <div class="invalid-feedback">Ops, e o texto do anúncio ?</div>
                     </div>
                 </div>
-                <div class="form-row">
+                <div class="form-row" id="upload-container">
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-success mb-3" data-dismiss="modal">Fazer upload de imagem</button>
+                        <input type="file" name="img" class="file" id="arquivo" accept="image/*" style="visibility: hidden; position: absolute;">
+
+                        <div class="input-group my-3">
+                            <input type="text" class="form-control" disabled placeholder="Escolher Imagem" id="file-texto">
+                            <div class="input-group-append">
+                                <button type="button" class="browse btn" style="background-color:rgb(108,140,59);color:white" id="btn-up">Escolher</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,6 +142,19 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 <button type="submit" class="btn btn-primary">Criar Anúncio</button>
             </div>
+            <script>
+                $(function(){
+                    $("#btn-up").click(function() {
+                        var file = $(this).parents().find("#arquivo");
+                        file.trigger("click");
+                    });
+                    $('input#arquivo').change(function(e) {
+                        var fileName = e.target.files[0].name;
+                        //seleciona o input texto
+                         $("#file-texto").val(fileName);
+                    });
+                });
+            </script>
         </form>
     @endcomponent
     @component('componentes.modal', ['id' => 'confirmarexclusao', 'titulo' => 'Confirmar Exclusão'])

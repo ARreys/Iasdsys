@@ -411,7 +411,7 @@ button {
     /* ------------------------- */
     /* Tela inicial */
     #parallax-image {
-        height: 70%;
+        height: 100%;
     }
     .tela-inicio .row p {
         font-size: 1.4rem;

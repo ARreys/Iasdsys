@@ -26,7 +26,6 @@
                 @empty
                 <tr>
                     <td colspan="3">Banco Vazio</td>
-                    @endif
                 </tr>
                 @endforelse
             </tbody>

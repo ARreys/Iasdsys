@@ -119,12 +119,14 @@
                 </div>
             </div>
         </div>
+
     <footer class="page-footer">
         <div class="footer-copyright text-center text-white py-3">
             Copyright &copy; <a style="color: white;" href="/">Igreja Adventista do Sétimo Dia - Central - Parnaíba</a>
         </div>
     </footer>
     <!-- Copyright -->
+
     @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
         <form class="needs-validation text-black" novalidate method="POST" action="{{ route('pessoa.create.presenca') }}">
             @csrf
