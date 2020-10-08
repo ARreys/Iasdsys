@@ -70,9 +70,10 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center text-black">
-                    <h1>Links Novo Tempo</h1>
+                <div class="col-md-12 text-center text-black mt-3">
+                    <h1 style="color: #153862;">Novo Tempo</h1>
                 </div>
+                <div class="col-md-12" style="height: 5px; background: #153862;"></div>
             </div>
             <div class="row">
                 <div class="col-md-4 col1" style="padding: 5px">
@@ -85,12 +86,12 @@
                                 <a onclick="window.open('https://biblia.com.br')">
                                     <button type="button" class="crsbiblico">Pedir agora !</button>
                                 </a>
-                                <small class="text-muted">Peça Gratuitamente !</small>
+                                <i data-feather="book"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col2" style="padding: 5px">
+                <div class="col-md-4 col1" style="padding: 5px">
                     <div class="card mb-4 box-shadow">
                         <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/novotempo.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
                         <div class="card-body">
@@ -100,12 +101,12 @@
                                 <a onclick="window.open('https://ntplay.com/aovivo')">
                                     <button type="button" class="ntplay">Assistir ao vivo !</button>
                                 </a>
-                                <small class="text-muted">9 mins</small>
+                                <i data-feather="tv"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col3" style="padding: 5px">
+                <div class="col-md-4 col1" style="padding: 5px">
                     <div class="card mb-4 box-shadow">
                         <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/radionovotempo.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
                         <div class="card-body">
@@ -115,7 +116,7 @@
                                 <a onclick="window.open('https://www.novotempo.com/radio/#onde-ouvir')">
                                     <button type="button" class="ntplay">Ouvir ao vivo !</button>
                                 </a>
-                                <small class="text-muted">9 mins</small>
+                                <i data-feather="radio"></i>
                             </div>
                         </div>
                     </div>
@@ -190,6 +191,7 @@
         </form>
     @endcomponent
     @component('componentes.scripts')
+    <script>feather.replace();</script>
     @endcomponent
 </body>
 </html>
