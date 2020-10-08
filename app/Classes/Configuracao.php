@@ -1,5 +1,9 @@
 <?php
 namespace App\Classes;
+
+use App\Model\Local;
+use App\Model\Usuario;
+
 class Configuracao
 {
     /**Paginas de registro */
@@ -10,12 +14,12 @@ class Configuracao
     const DIA = 'Saturday';
 
     public static function startSystem(){
-        App\Model\Usuario::create([
+        Usuario::create([
             "nome" => "Admin User",
             "telefone" => '88 6666-9999',
             'senha' => 'admin'
         ]);
-        App\Model\Local::create([
+        Local::create([
             "nome" => "Igreja",
             "rua" => 'rua nome',
             'bairro' => 'bairro nome',
