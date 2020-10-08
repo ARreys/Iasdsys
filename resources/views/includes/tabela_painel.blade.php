@@ -26,9 +26,9 @@
                             <a data-toggle="modal" href="#confirmarexclusao">
                                 <button type="button" class="btn btn-danger">Remover</button>
                             </a>
-                            <a data-toggle="modal" href="#alterarpessoa">
+                            {{--  <a data-toggle="modal" href="#alterarpessoa">
                                 <button type="button" class="btn btn-primary">Alterar</button>
-                            </a>
+                            </a>  --}}
                         </td>
                     </tr>
                 @empty

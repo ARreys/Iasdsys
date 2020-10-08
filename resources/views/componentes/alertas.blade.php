@@ -3,6 +3,7 @@
         position: fixed !important;
         right: 10px;
         bottom: 20px;
+        z-index: 100 !important;
         max-width: 410px;
     }
 </style>

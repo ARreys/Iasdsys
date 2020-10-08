@@ -7,6 +7,7 @@ use App\Model\Pessoa;
 use App\Model\Usuario;
 use App\Classes\Cookie;
 use App\Model\Presenca;
+use App\Classes\LocalCL;
 use App\Classes\PessoaCL;
 use App\Classes\UsuarioCL;
 use App\Classes\PresencaCL;
@@ -28,12 +29,14 @@ class UsuarioC extends Controller
         ->orderBy('presenca.dia_presenca','desc')
         ->paginate(Configuracao::PAGINAS);
         $ps = new PessoaCL();
+        $local = new LocalCL();
+        $local = $local->localDisponivel();
         foreach ($pessoa as $pessoas) {
             $ps->setDataNasc($pessoas->data_nasc);
             $pessoas->data_nasc = $ps->verificarIdade(2);
         }
 
-        return view('organizacao.painel', compact('pessoa'));
+        return view('organizacao.painel', compact('pessoa','local'));
     }
     public function viewVisitantes(Request $req){
         $presencaCl = new PresencaCL();
@@ -81,6 +84,23 @@ class UsuarioC extends Controller
             "senha" => $req->senha
         ]);
         return redirect()->route('user.view.admin');
+    }
+    public function delete(Request $req){
+        Presenca::where('pessoa_id',$req->id)->forceDelete();
+        Pessoa::where('id',$req->id)->forceDelete();
+        return redirect()->route('user.view.painel');
+    }
+    public function deleteAll(Request $req){
+        $presenca = new PresencaCL();
+        $data = $presenca->proximaData();
+        $lista = [];
+        $presencas = Presenca::where('dia_presenca','<',$data)->get();
+        foreach($presencas as $presenca){
+            $id = $presenca->pessoa_id;
+            Presenca::where('pessoa_id',$id)->forceDelete();
+            Pessoa::where('id',$id)->forceDelete();
+        }
+        return redirect()->route('user.view.painel');
     }
     /**
      * login

@@ -9,7 +9,11 @@
 @endcomponent
 
 <body class="sb-nav-fixed">
-
+    @if(session()->has('msg'))
+        @component('componentes.alertas', ['tipo' => session('msg.tipo')])
+            {{ session('msg.texto') }}
+        @endcomponent
+    @endif
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="{{route('inicio')}}">IASD Central PHB</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
@@ -225,7 +229,7 @@
         </form>
     @endcomponent
     @component('componentes.modal', ['id' => 'confirmarexclusao', 'titulo' => 'Confirmar Exclusão'])
-        <form class="needs-validation text-black" novalidate method="POST" action="">
+        <form class="needs-validation text-black" novalidate method="POST" action="{{ route('user.delete.pessoa') }}">
             @csrf
             <div class="form-column">
                 <div class="form-row">
@@ -242,7 +246,8 @@
         </form>
     @endcomponent
     @component('componentes.modal', ['id' => 'confirmarexclusaodetodos', 'titulo' => 'Confirmar exclusão de todas as presenças'])
-        <form class="needs-validation text-black" novalidate>
+        <form class="needs-validation text-black" novalidate method="POST" action="{{ route('user.deleteAll') }}">
+            @csrf
             <div class="form-column">
                 <div class="form-row">
                     <div class="col-md-12 mb-3">
@@ -257,18 +262,18 @@
         </form>
     @endcomponent
     @component('componentes.modal', ['id' => 'modalcapacidade', 'titulo' => 'Alterar capacidade'])
-        <form class="needs-validation text-black" novalidate>
+        <form class="needs-validation text-black" novalidate method="POST" action="{{ route('local.capacidade') }}">
+            @csrf
             <div class="form-column">
                 <div class="form-row">
                     <div class="col-md-12 mb-3">
                             <label for="validationCustom01">Insira a capacidade</label>
-                            <input type="number" class="form-control" id="capacidadepresenca" placeholder="Capacidade" name="quantidade" aria-describedby="inputGroupPrepend">
+                            <input type="number" class="form-control" min="1" step="1" id="capacidadepresenca" placeholder="Capacidade" name="quantidade" aria-describedby="inputGroupPrepend">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                        <label for="validationCustom01">Capacidade Atual</label>
-                        <input type="number" class="form-control" id="capacidadeatual" name="quantidade" aria-describedby="inputGroupPrepend">
+                    <div class="col-md-12">
+                        <h5>Capacidade atual: {{ $local->capacidade }}</h5>
                     </div>
                 </div>
             </div>

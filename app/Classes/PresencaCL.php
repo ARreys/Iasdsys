@@ -3,6 +3,7 @@ namespace App\Classes;
 
 use App\Model\Local;
 use App\Model\Presenca;
+use App\Classes\Configuracao;
 
 class PresencaCL
 {
@@ -103,7 +104,7 @@ class PresencaCL
 
         return $this;
     }
-    public function proximaData($dia = 'Saturday'){
+    public function proximaData($dia = Configuracao::DIA){
          return date('Y-m-d',(strtotime("next $dia")));
     }
 

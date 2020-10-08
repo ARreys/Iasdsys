@@ -2,6 +2,7 @@
 namespace App\Classes;
 
 use App\Model\Local;
+use App\Model\Presenca;
 
 class LocalCL
 {
@@ -88,5 +89,22 @@ class LocalCL
 
     public function localDisponivel(){
         return Local::where('em_uso',1)->first();
+    }
+
+    public function alterarCapacidade($data, $local){
+        $quantidade_agendada = Presenca::where('dia_presenca',$data)->count();
+        //falta pegar quantidade marcada usar svg(soma de coluna)
+        $quantidade_acompanhante = Presenca::where('dia_presenca',$data)->sum('quantidade_marcada');
+        $quantidade_agendada += $quantidade_acompanhante;
+        $quantidade_local = $local->capacidade;
+        if($quantidade_agendada > $quantidade_local){//local ira lotar
+            session(['msg' => [
+                'tipo' => 'erro',
+                'texto' => "A quantidade de pessoas já agendadas não é suportada em um local menor! No minimo um local com a capacidade igual $quantidade_agendada!"
+            ]]);
+            return false;
+        }else{//local ainda ficara vago ou lotado
+            return true;
+        }
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Out-2020 às 20:25
+-- Tempo de geração: 08-Out-2020 às 19:39
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.3.22
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `iasdsys`
 --
-CREATE DATABASE IF NOT EXISTS `iasdsys` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `iasdsys`;
 
 -- --------------------------------------------------------
 
@@ -38,7 +36,7 @@ CREATE TABLE `evento` (
   `descricao` text DEFAULT NULL,
   `agendado_dia` date DEFAULT NULL,
   `agendado_hora` varchar(45) DEFAULT NULL,
-  `foto` varchar(45) DEFAULT NULL,
+  `foto` longblob DEFAULT NULL,
   `usuario_id` int(11) NOT NULL,
   `local_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Um evento é cadastrado por um usuario\nUm levento esta agendado em um local';

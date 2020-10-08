@@ -10,9 +10,7 @@
 // });
 
 /* Rota tela inicial */
-Route::get('/', function () {
-    return view('index-pages/tela-inicio');
-})->name('inicio');
+Route::get('/', 'Controller\PessoaC@viewInicio')->name('inicio');
 /* ----------------------------------------Area Comum Pessoa----------------------------------------- */
 Route::prefix("/common")->group(function(){
     /* Rota contato */
@@ -36,6 +34,10 @@ Route::prefix("/user-admin")->group(function(){
     Route::post('user-create', 'Controller\UsuarioC@create')->name('user.create');
     /**Alterar capacidade do local em uso */
     Route::post('user/local-capacidade', 'Controller\LocalC@alterarCapacidade')->name('local.capacidade');
+    /**Deletar presenca de pessoa */
+    Route::post('delete/presenca', 'Controller\UsuarioC@delete')->name('user.delete.pessoa');
+    /**Deletar todas as presenças de agendamento passados */
+    Route::post('delte-all/permanentemente', 'Controller\UsuarioC@deleteAll')->name('user.deleteAll');
     /** Login e logout */
     Route::post('/login', 'Controller\UsuarioC@login')->name('user.login');
     Route::get('/logout', 'Controller\UsuarioC@logout')->name('user.logout');
@@ -55,17 +57,6 @@ Route::prefix("/evento")->group(function(){
 });
 
 Route::get('/start-system',function(){
-    App\Model\Usuario::create([
-        "nome" => "Admin User",
-        "telefone" => '88 6666-9999',
-        'senha' => 'admin'
-    ]);
-    App\Model\Local::create([
-        "nome" => "Igreja",
-        "rua" => 'rua nome',
-        'bairro' => 'bairro nome',
-        'em_uso' => 1,
-        'capacidade' => 7
-    ]);
+    App\Classes\Configuracao::startSystem();
     return 'Sistema startado';
 });

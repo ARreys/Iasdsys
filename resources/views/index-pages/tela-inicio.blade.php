@@ -26,7 +26,7 @@
                                     quis nostrud exercitation ullamco</p>
                             </div>
                         </div>
-                        <button type="button" class="btmarcar-presenca" data-toggle="modal" data-target="#modalpresenca">Marcar Presença</button>
+                        <button type="button" class="btmarcar-presenca" data-toggle="modal" data-target="#modalpresenca">Marcar Presença ate dia {{ date('d/m/Y',strtotime($dia_agendar)) }}</button>
                     </div>
                 </div>
                 <div class="culto-ao-vivo row">
