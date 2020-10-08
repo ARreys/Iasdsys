@@ -30,6 +30,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+                @if(session()->has('login') && session('login') == true)
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="{{ route('user.view.painel') }}">Painel</a>
+                </li>
+                @endif
                 <li class="nav-item">
                     <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#loginorganizacao">Administração</button>
                 </li>
