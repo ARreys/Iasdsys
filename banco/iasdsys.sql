@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Out-2020 às 19:39
+-- Tempo de geração: 08-Out-2020 às 21:06
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.3.22
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `iasdsys`
 --
+CREATE DATABASE IF NOT EXISTS `iasdsys` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `iasdsys`;
 
 -- --------------------------------------------------------
 
