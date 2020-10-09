@@ -15,6 +15,8 @@ Route::get('/', 'Controller\PessoaC@viewInicio')->name('inicio');
 Route::prefix("/common")->group(function(){
     /* Rota contato */
     Route::get('/contato-localizacao','Controller\PessoaC@viewContato')->name("contato_localizacao");
+    /* Rota Desenvolvedores */
+    Route::get('/desenvolvedores','Controller\PessoaC@viewDesenvolvedores')->name("desenvolvedores");
     /** Marcar Presença*/
     Route::post('local/presenca', 'Controller\PresencaC@agendarPresenca')->name('pessoa.create.presenca');
 });

@@ -19,6 +19,9 @@ class PessoaC extends Controller
     public function viewContato(){
         return view('contato-localizacao');
     }
+    public function viewDesenvolvedores(){
+        return view('desenvolvedores');
+    }
 
     public function viewInicio(){
         $presenca = new PresencaCL();
