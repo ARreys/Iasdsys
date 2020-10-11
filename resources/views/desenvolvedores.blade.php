@@ -71,6 +71,13 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a onclick="window.open('https://www.facebook.com/tiagooliveiraaso')">
+                                            <button class="rounded-circle social-mediadev-facebook" style="background: #242424; height: 35px;">
+                                                <i class="fab fa-facebook"></i>
+                                            </button>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a onclick="window.open('https://www.instagram.com/tiagooliveiraaso/')">
                                             <button class="rounded-circle social-mediadev-instagram" style="background: #242424; height: 35px;">
                                                 <i class="fab fa-instagram"></i>

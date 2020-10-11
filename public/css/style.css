@@ -357,6 +357,10 @@ button {
     box-shadow: 0 0 10px #0088cc;
 }
 
+.social-mediadev-facebook {
+    box-shadow: 0 0 10px #4267B2;
+}
+
 .social-mediadev-instagram {
     box-shadow: 0 0 10px #bc2a8d;
 }
@@ -367,6 +371,10 @@ button {
 
 .fa-telegram-plane {
     color: #0088cc;
+}
+
+.fa-facebook {
+    color: #4267B2;
 }
 
 .fa-instagram {
