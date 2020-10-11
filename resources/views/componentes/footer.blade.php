@@ -22,7 +22,10 @@
                                 <div class="thumb-content"><a href="https://www.adra.org.br">ADRA Brasil - Participe dessa causa !</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="https://play.google.com/store/apps/details?id=com.ntplay.app&hl=pt_BR">Baixe o NTPLay</a></div>
+                                <div class="thumb-content"><a href="https://play.google.com/store/apps/details?id=com.iatec.acms.me">Baixe aqui o 7me</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="https://play.google.com/store/apps/details?id=com.ntplay.app&hl=pt_BR">Baixe aqui o NTPLay</a></div>
                             </li>
                             <li>
                                 <div class="thumb-content"><a href="https://www.youtube.com/c/NTKids/videos">Espaço da criança</a></div>
@@ -61,4 +64,4 @@
         </div>
     </div>
 </footer>
-        <!-- Copyright -->
+<!-- Copyright -->

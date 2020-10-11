@@ -35,9 +35,11 @@
                     <a class="nav-link waves-effect waves-light" href="{{ route('user.view.painel') }}">Painel</a>
                 </li>
                 @endif
+                @if(session('login') == false)
                 <li class="nav-item">
                     <button class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#loginorganizacao">Administração</button>
                 </li>
+                @endif
             </ul>
             <!-- Links -->
 

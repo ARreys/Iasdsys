@@ -15,6 +15,7 @@
 }
 
 * {
+    font-family: NotoSans-Regular;
     box-sizing: border-box;
 }
 
@@ -50,23 +51,17 @@ button {
 /* tela inicial */
 
 .tela-inicio {
-    height: 100%;
+    min-height: 100%;
     font-family: NotoSans-Regular;
     background: rgba(0, 0, 0, 0.3);
 }
 
 .content-telainicio h1 {
     margin-top: 120px;
-    font-family: AdventSans-Logo;
 }
 
 .culto-ao-vivo {
     margin-top: 20px;
-}
-
-.culto-ao-vivo h2 {
-    font-family: AdventSans-Logo;
-    text-shadow: 0px 0px 10px white;
 }
 
 .culto-ao-vivo svg {
@@ -77,12 +72,8 @@ button {
     padding: 20px;
 }
 
-.container3 {
-    padding: 20px;
-}
-
 #parallax-image {
-    height: 100%;
+    min-height: 100%;
     box-shadow: inset 0px 10px 40px 0px black;
 }
 
@@ -91,16 +82,8 @@ button {
     color: white;
 }
 
-.col1 h2 {
-    text-shadow: 0px 0px 10px white;
-}
-
 .col1 svg {
     color: #dff119;
-}
-
-.row h1 {
-    text-shadow: 0px 0px 10px white;
 }
 
 .btmarcar-presenca {
@@ -152,6 +135,7 @@ button {
     padding: 8px 10px;
     border-radius: 20px;
     color: black;
+    font-weight: bold;
     background-color: white;
     border: none;
     overflow: hidden;
@@ -165,20 +149,8 @@ button {
     box-shadow: 0 0 10px #dff119, 0 0 40px #dff119, 0 0 80px #dff119;
 }
 
-
-/* .mais-informacoes {
-    font-family: NotoSans-Regular;
-    min-height: 100%;
-    background: #343a40;
-} */
-
 .card-info {
     padding-top: 10px;
-}
-
-.card-info-titulo {
-    color: white;
-    text-shadow: 0px 0px 10px white;
 }
 
 .texto-caption {
@@ -256,18 +228,10 @@ button {
     background-color: rgba(0, 0, 0, 0.5)
 }
 
-.title-container {
-    font-family: NotoSans-Regular;
-}
-
 .containeranuncios .container .jumbotron {
     padding: 1rem;
     border-radius: 15px;
     margin-bottom: 1rem;
-}
-
-.page-footeranuncios {
-    background: unset;
 }
 
 
@@ -349,12 +313,12 @@ button {
     background: #121212;
 }
 
-.col1 {
+.col-dev {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.col1 h4 {
+.col-dev h4 {
     color: #3d8fb1;
 }
 
@@ -365,12 +329,12 @@ button {
 .rounded-circledev {
     width: 250px;
     height: 250px;
-    margin-bottom: 15px;
     box-shadow: 0 0 10px #3d8fb1;
 }
 
 .stack {
     font-size: 1rem;
+    margin-bottom: 100px;
 }
 
 .midia-socialdev ul {
@@ -393,12 +357,28 @@ button {
     box-shadow: 0 0 10px #0088cc;
 }
 
-.social-mediadev-github {
-    box-shadow: 0 0 10px white;
+.social-mediadev-instagram {
+    box-shadow: 0 0 10px #bc2a8d;
+}
+
+.social-mediadev-website {
+    box-shadow: 0 0 10px #8900f2;
 }
 
 .fa-telegram-plane {
     color: #0088cc;
+}
+
+.fa-instagram {
+    color: #bc2a8d;
+}
+
+.fa-code {
+    color: #8900f2;
+}
+
+.social-mediadev-github {
+    box-shadow: 0 0 10px white;
 }
 
 
@@ -406,6 +386,16 @@ button {
 
 
 /* Geral */
+
+.title-container {
+    font-family: AdventSans-Logo;
+    text-shadow: 0px 0px 10px white;
+}
+
+.subtitle-container {
+    font-family: AdventSans-Logo;
+    text-shadow: 0px 0px 10px white;
+}
 
 .col-md-4 img {
     width: 100%;
@@ -415,7 +405,6 @@ button {
 
 .row .col-md-4 p {
     margin-top: 8px;
-    font-family: NotoSans-Regular;
 }
 
 
@@ -423,7 +412,7 @@ button {
 
 footer .main-footer {
     padding: 20px 0;
-    background: #252525;
+    background: #343a40;
 }
 
 footer ul {
@@ -555,6 +544,7 @@ footer.light .footer-copyright {
 
 .widget.no-box a p {
     color: gold;
+    text-decoration: underline;
 }
 
 .widget li a:hover {
@@ -643,22 +633,9 @@ footer.light .footer-copyright {
     /* Tela inicial */
     .content-telainicio h1 {
         margin-top: 100px;
-        font-family: AdventSans-Logo;
     }
     .culto-ao-vivo {
         margin-top: 5px;
-    }
-    .btmarcar-presenca {
-        margin-top: 30px;
-        padding: 8px 10px;
-        border-radius: 20px;
-        color: black;
-        font-weight: bold;
-        background-color: white;
-        border: none;
-        overflow: hidden;
-        transition: 0.5s;
-        box-shadow: 0 0 10px #dff119;
     }
     .sobreaigreja {
         background: no-repeat center/cover url('img/sobremin.jpg');
@@ -690,22 +667,9 @@ footer.light .footer-copyright {
     /* Tela inicial */
     .content-telainicio h1 {
         margin-top: 50px;
-        font-family: AdventSans-Logo;
     }
     .tela-inicio .row p {
         margin-top: 15px;
-    }
-    .btmarcar-presenca {
-        margin-top: 20px;
-        padding: 8px 10px;
-        border-radius: 20px;
-        color: black;
-        font-weight: bold;
-        background-color: white;
-        border: none;
-        overflow: hidden;
-        transition: 0.5s;
-        box-shadow: 0 0 10px #dff119;
     }
     /* ------------------------- */
 }

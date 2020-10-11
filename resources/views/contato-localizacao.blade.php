@@ -7,7 +7,7 @@
     <div class="contatos-localizacao">
         <div class="content">
             <div class="container container-localizacao text-white">
-                <h3 class="title-container">Contato e localização</h1>
+                <h1 class="title-container text-center">Contatos e localização</h1>
                 <div class="row linhamapa">
                     <div class="col-sm-12">
                         <div id="map" class="map"></div>
@@ -41,7 +41,7 @@
             ],
             view: new ol.View({
                 center: ol.proj.fromLonLat([-41.7796553, -2.9064952]),
-                zoom:15
+                zoom:17
             })
         });
     </script>

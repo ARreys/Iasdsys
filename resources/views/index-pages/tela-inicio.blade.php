@@ -15,7 +15,7 @@
             <div class="container text-white">
                 <div class="content-telainicio row">
                     <div class="col-sm-12 text-center text-black my-5">
-                        <h1 class="titulo">IASD Central de Parnaíba</h1>
+                        <h1 class="title-container">IASD Central de Parnaíba</h1>
                         <div class="my-4 mx-5">
                             <div class="text-center text-black">
                                 <p>Lorem ipsum dolor sit amet,
@@ -31,7 +31,7 @@
                 </div>
                 <div class="culto-ao-vivo row">
                     <div class="col-sm-12 text-center text-black my-5">
-                        <h2 class="titulo">Assistir culto ao vivo </h2>
+                        <h2 class="subtitle-container">Assistir culto ao vivo </h2>
                         <a onclick="window.open('https://www.youtube.com/c/iasdcentralparnaiba')" class="social-media">
                             <button type="button" class="btplayculto"><i data-feather="youtube"></i></button>
                         </a>
@@ -46,7 +46,7 @@
             <div class="row mb-15">
                 <div class="row">
                     <div class="texto-caption">
-                        <h1>Quem somos ?</h1>
+                        <h1 class="title-container">Quem somos ?</h1>
                         <div class="legenda-imagem" style="margin-top: 15px;">
                             <h4>Quem são os adventistas ?</h4>
                             <p>Os adventistas do sétimo dia, com mais de 17 milhões de membros no mundo, são membros de uma igreja cristã protestante organizada em 1863 nos Estados Unidos.</p>
@@ -68,64 +68,64 @@
         </div>
     </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center text-black mt-3">
-                    <h1 style="color: #153862;">Novo Tempo</h1>
-                </div>
-                <div class="col-md-12" style="height: 5px; background: #153862;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center text-black mt-3">
+                <h1 class="title-container" style="color: #153862;">Novo Tempo</h1>
             </div>
-            <div class="row">
-                <div class="col-md-4 col1" style="padding: 5px">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/cursobiblico.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                        <div class="card-body">
-                            <h2>Estudo bíblico</h2>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a onclick="window.open('https://biblia.com.br')">
-                                    <button type="button" class="crsbiblico">Pedir agora !</button>
-                                </a>
-                                <i data-feather="book"></i>
-                            </div>
+            <div class="col-md-12" style="height: 5px; background: #153862;"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col1" style="padding: 5px">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/cursobiblico.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                    <div class="card-body">
+                        <h2 class="subtitle-container">Estudo bíblico</h2>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="window.open('https://biblia.com.br')">
+                                <button type="button" class="crsbiblico">Pedir agora !</button>
+                            </a>
+                            <i data-feather="book"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col1" style="padding: 5px">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/novotempo.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                        <div class="card-body">
-                            <h2>Canal Novo Tempo</h2>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a onclick="window.open('https://ntplay.com/aovivo')">
-                                    <button type="button" class="ntplay">Assistir ao vivo !</button>
-                                </a>
-                                <i data-feather="tv"></i>
-                            </div>
+            </div>
+            <div class="col-md-4 col1" style="padding: 5px">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/novotempo.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                    <div class="card-body">
+                        <h2 class="subtitle-container">Canal Novo Tempo</h2>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="window.open('https://ntplay.com/aovivo')">
+                                <button type="button" class="ntplay">Assistir ao vivo !</button>
+                            </a>
+                            <i data-feather="tv"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col1" style="padding: 5px">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/radionovotempo.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                        <div class="card-body">
-                            <h2>Rádio Novo Tempo</h2>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a onclick="window.open('https://www.novotempo.com/radio/#onde-ouvir')">
-                                    <button type="button" class="ntplay">Ouvir ao vivo !</button>
-                                </a>
-                                <i data-feather="radio"></i>
-                            </div>
+            </div>
+            <div class="col-md-4 col1" style="padding: 5px">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{asset('img/radionovotempo.jpg')}}" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                    <div class="card-body">
+                        <h2 class="subtitle-container">Rádio Novo Tempo</h2>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="window.open('https://www.novotempo.com/radio/#onde-ouvir')">
+                                <button type="button" class="ntplay">Ouvir ao vivo !</button>
+                            </a>
+                            <i data-feather="radio"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        @component('componentes.footer')
-        @endcomponent
+    @component('componentes.footer')
+    @endcomponent
 
     @component('componentes.modal', ['id' => 'modalpresenca', 'titulo' => 'Marcar Presença'])
         <form class="needs-validation text-black" novalidate method="POST" action="{{ route('pessoa.create.presenca') }}">
