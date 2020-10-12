@@ -27,6 +27,9 @@
                             </div>
                         </div>
                         <button type="button" class="btmarcar-presenca" data-toggle="modal" data-target="#modalpresenca">Marcar Presença ate dia {{ date('d/m/Y',strtotime($dia_agendar)) }}</button>
+                        <a href="{{ asset('app/iasdcentralphb_1_1.0.apk') }}" download="" style="display: block; margin-top: 10px" target="_blank">
+                            <img src="https://www.batball11.com/images/android_btn.png" class="img-fluid" width="200"/>
+                        </a>
                     </div>
                 </div>
                 <div class="culto-ao-vivo row">
