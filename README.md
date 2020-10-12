@@ -33,7 +33,7 @@
    </tr>
     <tr>
        <td style="width:400px"><img src="readme/homepageCL.jpg" width=""/></td>
-       <td style="width:400px"><img src="readme/painelCL.png" width=""/></td>
+       <td style="width:400px"><img src="readme/painelCL.jpg" width=""/></td>
         <td style="width:400px"><img src="readme/desenvolvedoresCL.jpg" width=""/></td>
    </tr>
 </table>
