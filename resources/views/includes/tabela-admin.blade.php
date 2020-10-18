@@ -17,7 +17,7 @@
                     <td>{{ $u->senha }}</td>
                     @if(App\Classes\Configuracao::ADMIN == session('id') && $u->id != session('id'))
                     <td>
-                        <a data-toggle="modal" href="#confirmarexclusao">
+                        <a href="" data-id="{{ $u->id  }}" class="exlcuir-admin">
                             <button type="button" class="btn btn-danger">Remover</button>
                         </a>
                     </td>

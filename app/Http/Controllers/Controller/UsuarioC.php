@@ -94,14 +94,40 @@ class UsuarioC extends Controller
         $presenca = new PresencaCL();
         $data = $presenca->proximaData();
         $lista = [];
-        $presencas = Presenca::where('dia_presenca','<',$data)->get();
-        foreach($presencas as $presenca){
-            $id = $presenca->pessoa_id;
-            Presenca::where('pessoa_id',$id)->forceDelete();
-            Pessoa::where('id',$id)->forceDelete();
+        $quantidade = Presenca::where('dia_presenca','<',$data)->count();
+        if($quantidade > 0){
+            $presencas = Presenca::where('dia_presenca','<',$data)->get();
+            foreach($presencas as $presenca){
+                $id = $presenca->pessoa_id;
+                Presenca::where('pessoa_id',$id)->forceDelete();
+                Pessoa::where('id',$id)->forceDelete();
+            }
+            session(['msg' => [
+                'tipo' => 'info',
+                'texto' => 'Foram deletados um total de '.$quantidade.' registros passados!'
+            ]]);
+        }else{
+            session(['msg' => [
+                'tipo' => 'alert',
+                'texto' => 'Não existem registros de presenças passadas!'
+            ]]);
         }
+
         return redirect()->route('user.view.painel');
     }
+
+    public function deleteAdmin(Request $req){
+        if(Configuracao::ADMIN != $req->id){
+            Usuario::where('id',$req->id)->forceDelete();
+        }else{
+            session(['msg' => [
+                'tipo' => 'alert',
+                'texto' => 'Não existem registros de presenças passadas!'
+            ]]);
+        }
+        return redirect()->route('user.view.admin');
+    }
+
     /**
      * login
      *

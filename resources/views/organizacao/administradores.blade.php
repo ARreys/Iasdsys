@@ -224,7 +224,8 @@
     @endcomponent
 
     @component('componentes.modal', ['id' => 'confirmarexclusao', 'titulo' => 'Confirmar Exclusão'])
-        <form class="needs-validation text-black" novalidate>
+        <form class="needs-validation text-black" method="POST" action="{{ route('user.delete.admin') }}" novalidate>
+            @csrf
             <div class="form-column">
                 <div class="form-row">
                     <div class="col-md-12 mb-3">
@@ -232,6 +233,7 @@
                     </div>
                 </div>
             </div>
+            <input type="text" id="campo-id-admin" name="id" value="" style="visibility: hidden"/>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 <button type="submit" class="btn btn-danger">Excluir</button>
@@ -239,8 +241,21 @@
         </form>
     @endcomponent
 
-</body>
     @component('componentes.scripts')
+    <script>
+        $(function(){
+            $("a.exlcuir-admin").bind('click',function(e){
+                e.preventDefault();
+                let id = $(this).attr('data-id');
+                //alert(id);
+                $("#campo-id-admin").val(id);
+                $("#confirmarexclusao").modal('show');
+            });
+        });
+    </script>
+
     @endcomponent
+</body>
+
 
 </html>

@@ -40,6 +40,8 @@ Route::prefix("/user-admin")->group(function(){
     Route::post('delete/presenca', 'Controller\UsuarioC@delete')->name('user.delete.pessoa');
     /**Deletar todas as presenças de agendamento passados */
     Route::post('delte-all/permanentemente', 'Controller\UsuarioC@deleteAll')->name('user.deleteAll');
+    /**Deletar adimins */
+    Route::post('/delete-admin', 'Controller\UsuarioC@deleteAdmin')->name('user.delete.admin');
     /** Login e logout */
     Route::post('/login', 'Controller\UsuarioC@login')->name('user.login');
     Route::get('/logout', 'Controller\UsuarioC@logout')->name('user.logout');
